@@ -1,0 +1,324 @@
+
+/*font library used for this project*/
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css);
+/*basic resets*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*CSS postprocessing*/
+:root {
+   --backgroundColor: bisque;
+   --black: black;
+   --grey: grey;
+   --white: white;
+   --buttonBackground: blue;
+   --ferris: purple;
+   --slowLight: yellow;
+   --stopLight: red;
+   --goLight: green;
+   --fontBig: 30px;
+   --fontMedium: 24px;
+   --fontSmall: 18px;
+   --fontThin: 400;
+   --fontThick: 700;
+}
+
+/*Body formating*/
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: var(--fontThin);
+    font-size: var(--fontSmall);
+    line-height: 1.6;
+    background-color: var(--backgroundColor);
+}
+/*style for the form on the contact page*/
+.contact_form, .contact_info { 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+/*heading 1 formats*/
+h1 {
+    color: var(--black);
+    font-size: var(--fontBig);
+    font-weight: var(--fontThick);
+}
+/*heading 2 formats*/
+h2 {
+    color: var(--black);
+    font-size: var(--fontMedium);
+    font-weight: var(--fontThick);
+}
+/*heading 3 formats*/
+h3 {
+    color: var(--black);
+    font-size: var(--fontSmall);
+    font-weight: var(--fontThick);
+}
+/*formatting fo the profile div*/
+.profile {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: justify;
+}
+/*formatting for profile pic*/
+.profile_picture {
+    float: left;
+    width: 250px;
+    height: auto;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+
+/*work examples grid formatting*/
+.grid-item {
+    display: inline-block;
+    width: 33%;
+    grid-gap: 20px;
+}
+
+@supports (display: grid) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 0;
+    }
+
+    .grid-item:last-child {
+        grid-column: 3/3;
+        grid-row: 1/3;
+    }
+}
+
+/*Ferris Wheel Animation formatting*/
+.wheel {
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    margin-left: 50px;
+    position: relative;
+    height: 55vw;
+    width: 55vw;
+    max-width: 500px;
+    max-height: 500px;
+    animation-name: wheel;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    top: 20px;
+    z-index: 1;
+  }
+  
+  .line {
+    background-color: var(--black);
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+  }
+  
+  .line:nth-of-type(2) {
+    transform: rotate(60deg);
+  }
+  .line:nth-of-type(3) {
+    transform: rotate(120deg);
+  }
+  .line:nth-of-type(4) {
+    transform: rotate(180deg);
+  }
+  .line:nth-of-type(5) {
+    transform: rotate(240deg);
+  }
+  .line:nth-of-type(6) {
+    transform: rotate(300deg);
+  }
+  
+  .cabin {
+    background-color: var(--stopLight);
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    border: 2px solid;
+    transform-origin: 50% 0%;
+    animation: cabins 10s ease-in-out infinite;
+  }
+  
+  .cabin:nth-of-type(1) {
+    right: -8.5%;
+    top: 50%;
+  }
+  .cabin:nth-of-type(2) {
+    right: 17%;
+    top: 93.5%;
+  }
+  .cabin:nth-of-type(3) {
+    right: 67%;
+    top: 93.5%;
+  }
+  .cabin:nth-of-type(4) {
+    left: -8.5%;
+    top: 50%;
+  }
+  .cabin:nth-of-type(5) {
+    left: 17%;
+    top: 7%;
+  }
+  .cabin:nth-of-type(6) {
+    right: 17%;
+    top: 7%;
+  }
+  
+  @keyframes wheel {
+     0% {
+       transform: rotate(0deg);
+     }
+     100% {
+       transform: rotate(360deg);
+     }
+  }
+  
+  @keyframes cabins {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      background-color: var(--slowLight);
+    }
+    50% {
+      background-color: var(--ferris);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+/*Traffic Light Formatting*/
+#traffic {
+    background-color: var(--grey);
+    width: 300px;
+    margin: 50px auto;
+    border: 5px solid var(--black);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: 20px;
+    z-index: 2;
+  }
+  #traffic .trafficLight, #traffic .trafficLight--go, #traffic .trafficLight--slow, #traffic .trafficLight--stop {
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 2px solid var(--black);
+    cursor: pointer;
+    background-color: var(--grey);
+    color: var(--white);
+    margin: 10px auto;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 78%, black 100%);
+  }
+  #traffic .trafficLight:hover, #traffic .trafficLight--go:hover, #traffic .trafficLight--slow:hover, #traffic .trafficLight--stop:hover {
+    border-color: var(--slowLight);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  }
+  #traffic .trafficLight:active, #traffic .trafficLight--go:active, #traffic .trafficLight--slow:active, #traffic .trafficLight--stop:active {
+    transform: 0.9;
+  }
+  #traffic .trafficLight--stop {
+    background-color: var(--stopLight);
+  }
+  #traffic .trafficLight--slow {
+    background-color: var(--slowLight);
+  }
+  #traffic .trafficLight--go {
+    background-color: var(--goLight);
+  }
+/*button formatting*/
+button, .button {
+    border: none;
+    font-family: inherit;
+    background-color: var(--buttonBackground);
+    color: var(--buttonText);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    transition-duration: 0.5s, 0.5s;
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;
+}
+
+/*fomating for hover functionallity*/
+button:hover, button:focus {
+    cursor: pointer;
+    opacity: 0.8;
+    text-decoration: none;
+}
+/*formating to let users know when they have submited succesfully*/
+button:visited {
+    color: var(--goLight);
+}
+
+button:active {
+    color: var(--slowLight);
+}
+/*formating for the Nav bar section of the site.*/
+.navigation-list_item--active {
+    text-decoration: none;
+}
+
+/*formatting for the footer element*/
+.page-footer {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/*Media Querries for mobile devices*/
+
+@media all and (max-width: 500px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    .grid-item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: var(--fontMedium);
+    }
+}
+
+/*Media Querries for medium devices*/
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .grid-item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: var(--fontMedium);
+    }
+}
+/*Media Querries for larger devices*/
+
+@media all and (max-width: 750px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    .grid-item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: var(--fontMedium);
+    }
+}

@@ -1,0 +1,455 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*font library used for this project*/
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css);
+/*basic resets*/
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/*CSS postprocessing*/
+
+/*Body formating*/
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    background-color: bisque;
+}
+/*style for contact page*/
+.contact {
+    text-align: center;
+}
+/*heading 1 formats*/
+h1 {
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+}
+/*heading 2 formats*/
+h2 {
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+}
+/*heading 3 formats*/
+h3 {
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+}
+/*formatting fo the profile div*/
+.profile {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: justify;
+}
+/*formatting for profile pic*/
+.profile_picture {
+    float: left;
+    width: 250px;
+    height: auto;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+
+/*work examples grid formatting*/
+.grid-item {
+    display: inline-block;
+    width: 33%;
+    grid-gap: 20px;
+}
+
+@supports (display: grid) {
+    .grid-container {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 0;
+    }
+
+    .grid-item:last-child {
+        -ms-grid-column: 3;
+        grid-column: 3/3;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 2;
+        grid-row: 1/3;
+    }
+}
+
+/*Ferris Wheel Animation formatting*/
+.wheel {
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: 50px;
+    position: absolute;
+    height: 55vw;
+    width: 55vw;
+    max-width: 500px;
+    max-height: 500px;
+    -webkit-animation-name: wheel;
+            animation-name: wheel;
+    -webkit-animation-duration: 10s;
+            animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  
+  .line {
+    background-color: black;
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform-origin: 0% 0%;
+        -ms-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+  
+  .line:nth-of-type(2) {
+    -webkit-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+            transform: rotate(60deg);
+  }
+  .line:nth-of-type(3) {
+    -webkit-transform: rotate(120deg);
+        -ms-transform: rotate(120deg);
+            transform: rotate(120deg);
+  }
+  .line:nth-of-type(4) {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  .line:nth-of-type(5) {
+    -webkit-transform: rotate(240deg);
+        -ms-transform: rotate(240deg);
+            transform: rotate(240deg);
+  }
+  .line:nth-of-type(6) {
+    -webkit-transform: rotate(300deg);
+        -ms-transform: rotate(300deg);
+            transform: rotate(300deg);
+  }
+  
+  .cabin {
+    background-color: red;
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    border: 2px solid;
+    -webkit-transform-origin: 50% 0%;
+        -ms-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-animation: cabins 10s ease-in-out infinite;
+            animation: cabins 10s ease-in-out infinite;
+  }
+  
+  .cabin:nth-of-type(1) {
+    right: -8.5%;
+    top: 50%;
+  }
+  .cabin:nth-of-type(2) {
+    right: 17%;
+    top: 93.5%;
+  }
+  .cabin:nth-of-type(3) {
+    right: 67%;
+    top: 93.5%;
+  }
+  .cabin:nth-of-type(4) {
+    left: -8.5%;
+    top: 50%;
+  }
+  .cabin:nth-of-type(5) {
+    left: 17%;
+    top: 7%;
+  }
+  .cabin:nth-of-type(6) {
+    right: 17%;
+    top: 7%;
+  }
+  
+  @-webkit-keyframes wheel {
+     0% {
+       -webkit-transform: rotate(0deg);
+               transform: rotate(0deg);
+     }
+     100% {
+       -webkit-transform: rotate(360deg);
+               transform: rotate(360deg);
+     }
+  }
+  
+  @keyframes wheel {
+     0% {
+       -webkit-transform: rotate(0deg);
+               transform: rotate(0deg);
+     }
+     100% {
+       -webkit-transform: rotate(360deg);
+               transform: rotate(360deg);
+     }
+  }
+  
+  @-webkit-keyframes cabins {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    25% {
+      background-color: yellow;
+    }
+    50% {
+      background-color: purple;
+    }
+    100% {
+      -webkit-transform: rotate(-360deg);
+              transform: rotate(-360deg);
+    }
+  }
+  
+  @keyframes cabins {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    25% {
+      background-color: yellow;
+    }
+    50% {
+      background-color: purple;
+    }
+    100% {
+      -webkit-transform: rotate(-360deg);
+              transform: rotate(-360deg);
+    }
+  }
+/*Traffic Light Formatting*/
+#traffic {
+    background-color: yellow;
+    width: 300px;
+    margin: 50px auto;
+    border: 5px solid black;
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  }
+  #traffic .trafficLight {
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: yellow;
+    color: white;
+    margin: 10px auto;
+    width: 200px;
+    height: 200px;
+    background: -o-radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 78%, black 100%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 78%, black 100%);
+  }
+  #traffic .trafficLight--go {
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: yellow;
+    color: white;
+    margin: 10px auto;
+    width: 200px;
+    height: 200px;
+    background: -o-radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 78%, black 100%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 78%, black 100%);
+  }
+  #traffic .trafficLight--slow {
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: yellow;
+    color: white;
+    margin: 10px auto;
+    width: 200px;
+    height: 200px;
+    background: -o-radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 78%, black 100%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 78%, black 100%);
+  }
+  #traffic .trafficLight--stop {
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: yellow;
+    color: white;
+    margin: 10px auto;
+    width: 200px;
+    height: 200px;
+    background: -o-radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 78%, black 100%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 78%, black 100%);
+  }
+  #traffic .trafficLight:hover {
+    border-color: yellow;
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  }
+  #traffic .trafficLight--go:hover {
+    border-color: yellow;
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  }
+  #traffic .trafficLight--slow:hover {
+    border-color: yellow;
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  }
+  #traffic .trafficLight--stop:hover {
+    border-color: yellow;
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  }
+  #traffic .trafficLight:active, #traffic .trafficLight--go:active, #traffic .trafficLight--slow:active, #traffic .trafficLight--stop:active {
+    -webkit-transform: 0.9;
+        -ms-transform: 0.9;
+            transform: 0.9;
+  }
+  #traffic .trafficLight--stop {
+    background-color: red;
+  }
+  #traffic .trafficLight--slow {
+    background-color: yellow;
+  }
+  #traffic .trafficLight--go {
+    background-color: green;
+  }
+/*button formatting*/
+button {
+    border: none;
+    font-family: inherit;
+    background-color: blue;
+    color: undefined;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    -webkit-transition-duration: 0.5s, 0.5s;
+         -o-transition-duration: 0.5s, 0.5s;
+            transition-duration: 0.5s, 0.5s;
+    -webkit-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-timing-function: ease-in-out;
+         -o-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+}
+.button {
+    border: none;
+    font-family: inherit;
+    background-color: blue;
+    color: undefined;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    -webkit-transition-duration: 0.5s, 0.5s;
+         -o-transition-duration: 0.5s, 0.5s;
+            transition-duration: 0.5s, 0.5s;
+    -webkit-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-timing-function: ease-in-out;
+         -o-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+}
+
+/*fomating for hover functionallity*/
+button:hover, button:focus {
+    cursor: pointer;
+    opacity: 0.8;
+    text-decoration: none;
+}
+/*formating to let users know when they have submited succesfully*/
+button:visited {
+    color: green;
+}
+
+button:active {
+    color: yellow;
+}
+/*formating for the Nav bar section of the site.*/
+.navigation-list_item--active {
+    text-decoration: none;
+}
+
+/*formatting for the footer element*/
+.page-footer {
+    clear: both;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+}
+
+/*Media Querries for mobile devices*/
+
+@media all and (max-width: 500px) {
+    .grid-container {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    .grid-item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/*Media Querries for medium devices*/
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid-container {
+        -ms-grid-columns: 1fr 10px 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .grid-item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
+/*Media Querries for larger devices*/
+
+@media all and (max-width: 750px) {
+    .grid-container {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    .grid-item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
