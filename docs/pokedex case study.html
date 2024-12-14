@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> 
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body class="work">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Portfolio Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="work.html">Work Examples</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Case Study Section -->
+    <div class="container">
+        <div class="case-study">
+            <h2>Case Study: Simple Pokémon Pokedex Application</h2>
+            <p>This case study focuses on a simple Pokémon Pokedex web application built using HTML, CSS, JavaScript, jQuery, and the Pokémon API. The application allows users to view a list of Pokémon, click on them to view details, and interact with the Pokémon information dynamically.</p>
+
+            <p>In this project, the focus was on:</p>
+            <ul>
+                <li>Fetching data from the Pokémon API</li>
+                <li>Displaying dynamic content with modals</li>
+                <li>Building a responsive and interactive user interface</li>
+                <li>Managing asynchronous API calls using Promises</li>
+            </ul>
+
+            <p>The app uses the IIFE (Immediately Invoked Function Expression) pattern for modularity and organization. Bootstrap is used for the design and responsiveness of the modal that displays Pokémon details, and jQuery is used for DOM manipulation.</p>
+
+            <p>To learn more about this project and see it in action, visit the <a href="work.html">Work Examples</a> page.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Detailed Case Study -->
+    <div class="container">
+        <h3>Case Study: Simple Pokémon Pokedex Application</h3>
+
+        <h4>1. Overview</h4>
+        <p>This case study analyzes a simple <strong>Pokédex</strong> web application built using <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript (jQuery)</strong>, and the <strong>Pokémon API (pokeapi.co)</strong>. The application allows users to view a list of Pokémon, fetch detailed information about each Pokémon (such as name, image, and height), and display this information in a dynamic and interactive way using a modal window. The project leverages the <strong>Immediately Invoked Function Expression (IIFE)</strong> design pattern to encapsulate the functionality related to Pokémon data management and operations.</p>
+
+        <h4>2. Problem Statement</h4>
+        <p>Many beginners in web development struggle to create interactive applications that fetch and display real-time data from external APIs. A typical challenge in such applications is organizing code in a maintainable and modular way. Additionally, handling asynchronous API calls, managing UI elements, and making the application responsive are key concerns that require careful design decisions.</p>
+        <p>The goal of this project was to create a <strong>simple and interactive Pokédex</strong> application that:</p>
+        <ul>
+            <li>Fetches a list of Pokémon from a public API.</li>
+            <li>Displays the list on the webpage.</li>
+            <li>Allows users to click on each Pokémon to view its detailed information (such as image and height).</li>
+            <li>Uses a modal to display additional information about the selected Pokémon.</li>
+        </ul>
+
+        <h4>3. Technology Stack</h4>
+        <ul>
+            <li><strong>HTML</strong>: Used for the basic structure of the web page, including the container for the list of Pokémon and the modal for displaying additional information.</li>
+            <li><strong>CSS (Bootstrap)</strong>: Employed for styling the page and modal, and for making the app responsive. The app uses Bootstrap's modal component for an elegant display of Pokémon details.</li>
+            <li><strong>JavaScript (ES6 & jQuery)</strong>: Handles all the dynamic functionality of the app, including making API calls, handling user interactions, and manipulating the DOM to display Pokémon data. jQuery is used for simplifying DOM manipulations and event handling.</li>
+            <li><strong>Pokémon API (pokeapi.co)</strong>: A public API providing information on over 800 Pokémon, including their names, types, abilities, and images.</li>
+        </ul>
+
+        <h4>4. Features</h4>
+        <ol>
+            <li><strong>Loading Pokémon List</strong>: The application fetches a list of 100 Pokémon from the Pokémon API using the <code>loadList</code> function. Once the list is loaded, the Pokémon names are displayed in an unordered list (<code>ul</code>), each as a clickable button.</li>
+            <li><strong>Viewing Details</strong>: Clicking a Pokémon name triggers the <code>showDetails</code> function, which loads detailed information (image and height) about the Pokémon from the API. This information is displayed in a modal that appears on the screen.</li>
+            <li><strong>Interactive Modal</strong>: The modal uses Bootstrap's built-in modal functionality. It shows the Pokémon's name, image, and height. The height is dynamically adjusted to display a personalized message if the Pokémon is very tall or very short (using conditional checks on the height). The modal can be closed either by clicking outside the modal or pressing the "Escape" key.</li>
+            <li><strong>UI Feedback</strong>: A loading message is displayed when the app is fetching data from the API, ensuring the user understands the app is processing the request. The loading message is hidden once the data is loaded and displayed.</li>
+            <li><strong>Error Handling</strong>: Basic error handling is implemented for API requests. If there's an issue fetching Pokémon data (e.g., network error), an error message will be logged in the console, and the user will not be shown incomplete or corrupted data.</li>
+        </ol>
+
+        <h4>5. Implementation Details</h4>
+        <ul>
+            <li><strong>IIFE (Immediately Invoked Function Expression)</strong>: The main logic for interacting with the Pokémon API is encapsulated inside an IIFE, which is a design pattern used to create a private scope for variables and functions. This ensures that the Pokémon list and related methods (<code>add</code>, <code>getAll</code>, <code>loadList</code>, <code>loadDetails</code>) are encapsulated and cannot be accessed directly outside the module, reducing the risk of conflicts or unintentional variable access.</li>
+            <li><strong>Asynchronous Programming</strong>: <strong>Promises</strong> and the <code>then</code> syntax are used for handling asynchronous data fetching from the Pokémon API. This ensures that the UI can be updated once the data is successfully loaded from the API. The <code>fetch</code> function is used to make GET requests to the Pokémon API. The app handles both successful and failed API requests using <code>.then()</code> for success and <code>.catch()</code> for errors.</li>
+            <li><strong>DOM Manipulation with jQuery</strong>: The app uses jQuery for easier DOM manipulation. For example, when creating list items (<code>li</code>), buttons (<code>button</code>), or updating modal content (<code>modal-title</code>, <code>modal-image</code>, etc.), jQuery methods like <code>.append()</code>, <code>.text()</code>, and <code>.attr()</code> are used to modify the page. jQuery also simplifies event delegation for handling button clicks and modal interactions.</li>
+            <li><strong>Bootstrap Modal</strong>: The app uses Bootstrap's modal component to show Pokémon details. The modal's content (name, image, height) is updated dynamically after the Pokémon's details are loaded.</li>
+        </ul>
+
+        <h4>6. Challenges and Solutions</h4>
+        <ul>
+            <li><strong>API Rate Limiting</strong>: While not a problem in this specific app (as the Pokémon API allows a sufficient number of requests), many public APIs impose rate limits. A future version could implement features like caching Pokémon data locally or introducing a loading state to minimize redundant requests.</li>
+            <li><strong>Error Handling and User Feedback</strong>: Initially, errors from failed API requests were not clearly communicated to the user. A solution could be to display a user-friendly message, rather than just logging errors to the console. In the final version, the app provides basic error logging (in the console) and hides the loading message even if the request fails.</li>
+            <li><strong>Responsive Design</strong>: Using Bootstrap's grid system and modal design ensures the app is responsive on different screen sizes. However, additional CSS customizations might be necessary for more complex layouts and interactions.</li>
+        </ul>
+
+        <h4>7. User Experience</h4>
+        <ul>
+            <li><strong>Simple Interface</strong>: The app provides a straightforward interface with a list of Pokémon names. Users can easily click on any name to view more details.</li>
+            <li><strong>Loading Indicators</strong>: The use of a loading spinner ensures that the user is aware that data is being fetched, and prevents them from interacting with the page during the fetch operation.</li>
+            <li><strong>Error Handling</strong>: Although basic, error handling ensures that the app doesn't crash when an issue occurs, though improving user-facing error messages could enhance the user experience.</li>
+        </ul>
+
+        <h4>8. Future Improvements</h4>
+        <ul>
+            <li><strong>Caching</strong>: Introduce caching mechanisms so the app doesn’t repeatedly fetch the same Pokémon details, improving speed and reducing the number of API requests.</li>
+            <li><strong>Search Functionality</strong>: Add a search bar that allows users to search for Pokémon by name. This could dynamically filter the list as the user types.</li>
+            <li><strong>Pagination</strong>: The app currently loads a fixed number of 100 Pokémon. Pagination could be added to allow users to load more Pokémon dynamically when they scroll down or click a "Load More" button.</li>
+            <li><strong>Improved Error Handling</strong>: More user-friendly error messages and retry functionality in case of network failure would improve the user experience.</li>
+            <li><strong>Enhanced UI and Styling</strong>: The styling could be improved to better match the Pokémon theme, and animations could be added for the modal to make it feel more polished.</li>
+        </ul>
+
+        <h4>9. Conclusion</h4>
+        <p>This Pokémon Pokedex application is a simple yet effective demonstration of key concepts in modern web development, including asynchronous API calls, dynamic content rendering, and UI responsiveness. The application is modular and uses best practices such as the IIFE pattern and event delegation for scalability and maintainability. While the current functionality is basic, the app has the potential for many enhancements, such as improved error handling, caching, and a more sophisticated UI design.</p>
+        <p>By building this app, developers can learn the fundamentals of interacting with APIs, handling asynchronous data, and dynamically updating the DOM based on external inputs.</p>
+
+    </div>
+
+</body>
+</html>
+

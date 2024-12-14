@@ -1,0 +1,27 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# .env file for environment variables (make sure to create a .env file for sensitive information)
+.env
+
+# IDE/Editor files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# Log files
+*.log
+
+# Public directory files (if you want to avoid committing your static files)
+public/
+
+# Build and temporary files
+dist/
+tmp/
+*.tmp
