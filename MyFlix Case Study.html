@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: MyFlix App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="display-4 text-center">Case Study: MyFlix App</h1>
+        
+        <!-- Overview Section -->
+        <section id="overview">
+            <h2 class="mt-4">Overview</h2>
+            <p>The MyFlix app is a movie discovery and management platform for movie lovers. It allows users to register, log in, browse movies, and manage their favorite movie lists. The app provides a seamless user experience by offering features like creating user profiles, adding movies to a favorites list, and storing personal preferences like date of birth and email.</p>
+            <p>This case study explores the key problems the app solves, the design approach I took to build it, and how I used modern technologies to solve those problems in an intuitive, user-friendly way.</p>
+        </section>
+
+        <!-- The Issue Section -->
+        <section id="the-issue">
+            <h2 class="mt-4">The Issue I will address with this app</h2>
+            <p>Before MyFlix, many movie enthusiasts faced the following challenges:</p>
+            <ul>
+                <li><strong>Disorganized Movie Recommendations:</strong> Users needed a better way to find and store their favorite movies in a list they can refer back to.</li>
+                <li><strong>Lack of User-Centric Features:</strong> Many platforms didn’t provide a personalized experience to save and manage favorite movies.</li>
+                <li><strong>Complex User Authentication:</strong> Logging into platforms and managing user data was often confusing and time-consuming.</li>
+            </ul>
+        </section>
+
+        <!-- The Solution Section -->
+        <section id="the-solution">
+            <h2 class="mt-4">The Solution: MyFlix App</h2>
+            <p>To address these issues, I designed MyFlix as a simple but effective platform that offers:</p>
+            <ul>
+                <li><strong>User Profiles:</strong> Users can create personal profiles with their username, email, and date of birth.</li>
+                <li><strong>Movie Management:</strong> A personalized favorite movie list, where users can add and remove movies based on their interests.</li>
+                <li><strong>Seamless Authentication:</strong> Secure login process that uses JWT (JSON Web Token) authentication for user sessions.</li>
+            </ul>
+        </section>
+
+        <!-- Key Features Section -->
+        <section id="key-features">
+            <h2 class="mt-4">Key Features & How They Solve the Problems</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>User Authentication</h4>
+                    <p><strong>Problem:</strong> Users had to manually input their credentials every time they logged in.</p>
+                    <p><strong>Solution:</strong> The app uses JWT authentication, allowing users to securely log in once and maintain a session, reducing the friction of logging in repeatedly.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>User Profile Management</h4>
+                    <p><strong>Problem:</strong> Lack of an easy way to manage user profiles and access personalized data.</p>
+                    <p><strong>Solution:</strong> MyFlix allows users to store and update their personal information (username, email, birth date) in one place.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Favorite Movies List</h4>
+                    <p><strong>Problem:</strong> Movie enthusiasts faced difficulties organizing and keeping track of their favorite movies.</p>
+                    <p><strong>Solution:</strong> MyFlix allows users to add and remove movies from their favorite list, ensuring they can always keep track of the movies they love.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Search & Browse Movies</h4>
+                    <p><strong>Problem:</strong> Finding relevant movie recommendations could be overwhelming.</p>
+                    <p><strong>Solution:</strong> MyFlix provides an easy-to-use search functionality where users can explore movies by title, genre, or director.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Backend Section -->
+        <section id="backend">
+            <h2 class="mt-4">Backend</h2>
+            <p>The backend uses the following technologies:</p>
+            <ul>
+                <li><strong>Node.js & Express:</strong> For handling user requests, authentication, and API communication.</li>
+                <li><strong>MongoDB:</strong> Used for storing user and movie data. Its NoSQL nature makes the app scalable and flexible.</li>
+                <li><strong>JWT Authentication:</strong> For secure user authentication and maintaining sessions.</li>
+            </ul>
+        </section>
+
+        <!-- Challenges and Solutions Section -->
+        <section id="challenges">
+            <h2 class="mt-4">Challenges Faced and Solutions</h2>
+            <ul>
+                <li><strong>Handling Asynchronous Data Requests:</strong> I used React’s state management to handle asynchronous requests gracefully.</li>
+                <li><strong>Ensuring Secure Authentication:</strong> Implementing JWT authentication ensured secure user login and session management.</li>
+                <li><strong>Managing User-Favorite Lists:</strong> Real-time synchronization of users' favorite movie lists was achieved through backend communication.</li>
+                <li><strong>Scalability & Performance:</strong> MongoDB was used to ensure the app can scale efficiently as more users and movies are added.</li>
+            </ul>
+        </section>
+
+        <!-- Technology Stack Section -->
+        <section id="tech-stack">
+            <h2 class="mt-4">Technology Stack</h2>
+            <p><strong>Frontend:</strong> React.js, React Router, React Bootstrap.</p>
+            <p><strong>Backend:</strong> Node.js, Express, MongoDB, JWT.</p>
+        </section>
+
+        <!-- Impact and Results Section -->
+        <section id="impact-results">
+            <h2 class="mt-4">Impact and Results</h2>
+            <ul>
+                <li><strong>Increased User Engagement:</strong> Personalized movie management features led to longer user interactions.</li>
+                <li><strong>Improved User Retention:</strong> The app’s personalized experience increased user retention.</li>
+                <li><strong>Seamless User Experience:</strong> Intuitive design and fast authentication made it easy for new users to get started.</li>
+            </ul>
+        </section>
+
+        <!-- Conclusion Section -->
+        <section id="conclusion">
+            <h2 class="mt-4">Conclusion</h2>
+            <p>MyFlix solves key problems in movie management by providing a simple but powerful platform for managing favorite movies. By using modern technologies like React, Node.js, JWT, and MongoDB, I was able to create a scalable, secure, and user-friendly application that delivers real value to movie lovers everywhere.</p>
+            <p>Future improvements include adding administrative users to clean up data and fix security flaws to ensure secure access to user data.</p>
+        </section>
+
+    </div>
+
+    <!-- Optional Footer -->
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 MyFlix App. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
