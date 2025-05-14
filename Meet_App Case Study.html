@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Case Study: Meet App</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body class="work">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Portfolio Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="work.html">Work Examples</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h1 class="display-4 text-center">Case Study: Meet App</h1>
+
+    <section id="overview">
+      <h2 class="mt-4">Overview</h2>
+      <p>
+        Meet App is a serverless, progressive web application (PWA) built with React and Vite. It allows users to explore upcoming tech events across various cities using the Google Calendar API. Built using Test-Driven Development (TDD) and designed with scalability and offline usability in mind.
+      </p>
+    </section>
+
+    <section id="the-issue">
+      <h2 class="mt-4">The Problem</h2>
+      <ul>
+        <li>Lack of a centralized way to discover upcoming tech events by location</li>
+        <li>Event apps often lack offline capabilities</li>
+        <li>Limited data visualization on event trends and types</li>
+      </ul>
+    </section>
+
+    <section id="the-solution">
+      <h2 class="mt-4">The Solution: Meet App</h2>
+      <p>
+        Meet App offers an intuitive UI with the ability to filter events by city, visualize event data, and use the app offline. Authentication is handled via Google OAuth, and data is fetched via Google Calendar API.
+      </p>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="img/meetapp-home.png" alt="Meet App Homepage" class="img-fluid"/>
+        </div>
+        <div class="col-md-6">
+          <img src="img/meetapp-details.png" alt="Event Details" class="img-fluid"/>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 class="mt-4">Key Features</h2>
+      <ul>
+        <li>🔍 Filter events by city</li>
+        <li>📋 Show/hide event details</li>
+        <li>🔢 Specify number of events</li>
+        <li>📶 Offline access via PWA</li>
+        <li>📊 Charts to visualize city-wise and genre-wise events</li>
+        <li>📲 Add shortcut to home screen</li>
+      </ul>
+    </section>
+
+    <section id="tech-stack">
+      <h2 class="mt-4">Tech Stack</h2>
+      <p><strong>Frontend:</strong> React, Vite, Workbox (PWA), Recharts</p>
+      <p><strong>Testing:</strong> Jest, React Testing Library</p>
+      <p><strong>Auth & Data:</strong> Google Calendar API, OAuth2</p>
+      <p><strong>Deployment:</strong> Vercel (serverless functions)</p>
+    </section>
+
+    <section id="development">
+      <h2 class="mt-4">Development Highlights</h2>
+      <ul>
+        <li>✅ Test-Driven Development (TDD) with Jest</li>
+        <li>🔒 Secure OAuth2 login using Google APIs</li>
+        <li>📦 Deployed as a PWA for offline capabilities</li>
+        <li>📉 Visualized data with Recharts for better UX</li>
+      </ul>
+    </section>
+
+    <section id="scenarios">
+      <h2 class="mt-4">Feature Scenarios (BDD-style)</h2>
+      <p><strong>Feature 1:</strong> Filter Events By City</p>
+      <ul>
+        <li>Scenario 1: Default – show events from all cities</li>
+        <li>Scenario 2: Show city suggestions during typing</li>
+        <li>Scenario 3: Filter events upon selecting a city</li>
+      </ul>
+      <p><strong>Feature 2:</strong> Show/Hide Event Details</p>
+      <ul>
+        <li>Scenario 1: Events collapsed by default</li>
+        <li>Scenario 2: Expand event to view details</li>
+      </ul>
+      <p><strong>Feature 3:</strong> Specify Number of Events</p>
+      <ul>
+        <li>Scenario 1: Default 32 events shown</li>
+        <li>Scenario 2: User can set number manually</li>
+      </ul>
+    </section>
+
+    <section id="impact-results">
+      <h2 class="mt-4">Impact & Results</h2>
+      <ul>
+        <li>🎯 Improved discovery of tech events by location</li>
+        <li>📈 Better user experience with offline access</li>
+        <li>📊 Insightful visualizations via charts</li>
+        <li>🚀 Fast performance and scalability through serverless deployment</li>
+      </ul>
+    </section>
+
+    <section id="conclusion">
+      <h2 class="mt-4">Conclusion</h2>
+      <p>
+        Meet App solves a key problem for tech enthusiasts by helping them find events easily and stay informed even when offline. Built with modern web technologies and a strong focus on TDD, it's scalable, fast, and easy to use.
+      </p>
+      <p>Future improvements include event rating, sharing features, and calendar integration.</p>
+    </section>
+  </div>
+
+  <footer class="text-center mt-5">
+    <p>2025 Meet App Case Study</p>
+  </footer>
+</body>
+</html>
+
+
+</body>
+</html>
