@@ -1,175 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Study: MyFlix App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Case Study: MyFlix App</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Optional Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
 <body class="work">
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Portfolio Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="work.html">Work Examples</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="container mt-5">
-        <h1 class="display-4 text-center">Case Study: MyFlix App</h1>
-
-        <!-- Overview -->
-        <section id="overview">
-            <h2 class="mt-4">Overview</h2>
-            <p>The MyFlix app is a dynamic and user-friendly movie discovery and management platform. It provides users with the ability to browse movies, create a personal profile, and manage a list of their favorite movies. The application utilizes modern technologies to ensure that users have a seamless and personalized experience with secure authentication and flexible data management.</p>
-            <p>This case study discusses how I tackled specific challenges in user authentication, movie management, and user experience using React.js, Node.js, MongoDB, and JWT for a secure and scalable solution.</p>
-        </section>
-
-        <!-- The Issue -->
-        <section id="the-issue">
-            <h2 class="mt-4">The Issues Addressed by MyFlix</h2>
-            <ul>
-                <li><strong>Disorganized Movie Recommendations:</strong> Users had difficulty finding and organizing their favorite movies.</li>
-                <li><strong>Lack of Personalization:</strong> Many platforms failed to offer users a personalized experience or a way to manage their movie preferences.</li>
-                <li><strong>Complicated Authentication:</strong> User login and session management often involved complex steps and security issues.</li>
-            </ul>
-        </section>
-
-        <!-- The Solution -->
-        <section id="the-solution">
-            <h2 class="mt-4">The Solution: MyFlix App</h2>
-            <ul>
-                <li><strong>Personalized User Profiles:</strong> Store user details like email and birth date to personalize experience.</li>
-                <li><strong>Favorite Movie List:</strong> Enables users to curate a personal movie collection.</li>
-                <li><strong>Seamless Authentication:</strong> Uses JWT for secure, persistent sessions.</li>
-            </ul>
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="img/myflix-signup.png" alt="Signup Screen" class="img-fluid">
-                </div>
-                <div class="col-md-6">
-                    <img src="img/myflix-login.png" alt="Login Screen" class="img-fluid">
-                </div>
-            </div>
-        </section>
-
-        <!-- Key Features -->
-        <section id="key-features">
-            <h2 class="mt-4">Key Features & Problem Solving</h2>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <h4>User Authentication</h4>
-                    <p><strong>Problem:</strong> Repeated credential entry.</p>
-                    <p><strong>Solution:</strong> JWT allows secure, persistent login sessions.</p>
-                </div>
-                <div class="col-md-6">
-                    <h4>Profile Management</h4>
-                    <p><strong>Problem:</strong> Difficult to manage personal info.</p>
-                    <p><strong>Solution:</strong> Users can easily update profile details.</p>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <img src="img/myflix-profile.png" alt="Profile Screen" class="img-fluid">
-                </div>
-                <div class="col-md-6">
-                    <img src="img/myflix-login.png" alt="Login Screen" class="img-fluid">
-                </div>
-            </div>
-
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <h4>Favorite Movies</h4>
-                    <p><strong>Problem:</strong> No way to manage or recall favorites.</p>
-                    <p><strong>Solution:</strong> Easily add/remove from favorites.</p>
-                </div>
-                <div class="col-md-6">
-                    <h4>Movie Search & Browse</h4>
-                    <p><strong>Problem:</strong> Overwhelming to find relevant movies.</p>
-                    <p><strong>Solution:</strong> Simple filters by title, genre, or director.</p>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <img src="img/myflix-added-to-favorites.png" alt="Added to Favorites" class="img-fluid">
-                </div>
-                <div class="col-md-6">
-                    <img src="img/myflix-favoritelist.png" alt="Favorites List" class="img-fluid">
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <img src="img/myflix-homepage.png" alt="Homepage" class="img-fluid">
-                </div>
-                <div class="col-md-6">
-                    <img src="img/myflix-movieview.png" alt="Movie View" class="img-fluid">
-                </div>
-            </div>
-        </section>
-
-        <!-- Backend -->
-        <section id="backend">
-            <h2 class="mt-4">Backend</h2>
-            <ul>
-                <li><strong>Node.js & Express:</strong> RESTful API backend architecture.</li>
-                <li><strong>MongoDB:</strong> NoSQL database for scalable data storage.</li>
-                <li><strong>JWT Authentication:</strong> Secure user login with token-based authentication.</li>
-            </ul>
-        </section>
-
-        <!-- Challenges -->
-        <section id="challenges">
-            <h2 class="mt-4">Challenges and Solutions</h2>
-            <ul>
-                <li><strong>Asynchronous Data:</strong> Handled using React’s state management.</li>
-                <li><strong>Authentication Security:</strong> Implemented encrypted JWT token handling.</li>
-                <li><strong>Real-Time Favorites:</strong> Synced list via dynamic backend updates.</li>
-                <li><strong>Scalability:</strong> Used MongoDB to allow flexible growth.</li>
-            </ul>
-        </section>
-
-        <!-- Tech Stack -->
-        <section id="tech-stack">
-            <h2 class="mt-4">Technology Stack</h2>
-            <p><strong>Frontend:</strong> React.js, React Router, React Bootstrap</p>
-            <p><strong>Backend:</strong> Node.js, Express, MongoDB, JWT</p>
-        </section>
-
-        <!-- Results -->
-        <section id="impact-results">
-            <h2 class="mt-4">Impact and Results</h2>
-            <ul>
-                <li><strong>Increased Engagement:</strong> Personalization kept users involved longer.</li>
-                <li><strong>Better Retention:</strong> Simplified experience led to repeat use.</li>
-                <li><strong>Smoother UX:</strong> UI/UX design and JWT-based login created a frictionless experience.</li>
-            </ul>
-        </section>
-
-        <!-- Conclusion -->
-        <section id="conclusion">
-            <h2 class="mt-4">Conclusion</h2>
-            <p>MyFlix addresses critical issues in user authentication and movie organization with a modern, secure, and intuitive app. Using cutting-edge tech like React, Node.js, JWT, and MongoDB, MyFlix delivers a scalable and engaging user experience.</p>
-            <p>Future goals include adding user ratings, AI-driven recommendations, and an admin dashboard for content
-management.</p>
-        </section>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="work.html">Work</a></li>
+      </ul>
     </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <h1 class="display-4 text-center">Case Study: MyFlix App (Backend Focus)</h1>
+
+    <!-- Overview -->
+    <section class="mt-5">
+      <h2>Overview</h2>
+      <p>The MyFlix app is a full-stack application designed to manage and catalog movie data while providing user authentication and data persistence. This case study focuses on the backend architecture that powers the app’s functionality and security.</p>
+    </section>
+
+    <!-- Problem -->
+    <section class="mt-5">
+      <h2>Challenges Solved by the Backend</h2>
+      <ul>
+        <li><strong>Data Persistence:</strong> Needed a reliable and scalable way to store movies and user profiles.</li>
+        <li><strong>User Authentication:</strong> Required a secure login system without relying on traditional session storage.</li>
+        <li><strong>RESTful API:</strong> Needed a structured, scalable API to support frontend operations and external integrations.</li>
+      </ul>
+    </section>
+
+    <!-- Backend Architecture -->
+    <section class="mt-5">
+      <h2>Backend Architecture</h2>
+      <ul>
+        <li><strong>Node.js & Express:</strong> REST API built with Express for handling routes, middleware, and controllers.</li>
+        <li><strong>MongoDB & Mongoose:</strong> Flexible NoSQL database schema for storing user and movie data with Mongoose ODM.</li>
+        <li><strong>JWT (JSON Web Tokens):</strong> Stateless, secure authentication for login and protected routes.</li>
+        <li><strong>CORS:</strong> Configured for secure cross-origin API access.</li>
+        <li><strong>Data Validation:</strong> Input validation using `express-validator` to prevent malformed requests.</li>
+      </ul>
+    </section>
+
+    <!-- Endpoints -->
+    <section class="mt-5">
+      <h2>REST API Endpoints</h2>
+      <p>The backend exposes a variety of endpoints to perform CRUD operations:</p>
+      <ul>
+        <li><code>POST /users</code> – Register new user</li>
+        <li><code>POST /login</code> – Authenticate user and return JWT</li>
+        <li><code>GET /movies</code> – Return full list of movies</li>
+        <li><code>GET /movies/:title</code> – Return data about a specific movie</li>
+        <li><code>POST /users/:username/movies/:movieId</code> – Add a movie to a user’s favorites</li>
+        <li><code>DELETE /users/:username/movies/:movieId</code> – Remove movie from favorites</li>
+        <li><code>PUT /users/:username</code> – Update user info</li>
+        <li><code>DELETE /users/:username</code> – Deregister user</li>
+      </ul>
+    </section>
+
+    <!-- Security Measures -->
+    <section class="mt-5">
+      <h2>Security Considerations</h2>
+      <ul>
+        <li><strong>Password Hashing:</strong> Uses bcrypt to hash passwords before storing in MongoDB.</li>
+        <li><strong>Token Expiry:</strong> JWT tokens have an expiration to prevent abuse.</li>
+        <li><strong>Input Validation:</strong> Prevents SQL injection or malformed request bodies.</li>
+        <li><strong>Authorization:</strong> Middleware ensures users can only access or modify their own data.</li>
+      </ul>
+    </section>
+
+    <!-- Tools and Technologies -->
+    <section class="mt-5">
+      <h2>Technologies Used</h2>
+      <ul>
+        <li><strong>Node.js</strong> – JavaScript runtime for scalable server-side applications</li>
+        <li><strong>Express</strong> – Lightweight web framework for routing and middleware</li>
+        <li><strong>MongoDB + Mongoose</strong> – NoSQL database with schema-based modeling</li>
+        <li><strong>JWT</strong> – Token-based authentication system</li>
+        <li><strong>Bcrypt</strong> – Library for secure password hashing</li>
+        <li><strong>Postman</strong> – Used for testing and documenting API endpoints</li>
+      </ul>
+    </section>
+
+    <!-- Lessons Learned -->
+    <section class="mt-5">
+      <h2>Challenges & Solutions</h2>
+      <ul>
+        <li><strong>Asynchronous Handling:</strong> Used `async/await` and proper error handling to deal with async operations.</li>
+        <li><strong>Scalability:</strong> MongoDB’s flexibility allowed schema expansion without breaking the app.</li>
+        <li><strong>Authentication Logic:</strong> Fine-tuned JWT token issuance and role-based access for future admin features.</li>
+      </ul>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="mt-5">
+      <h2>Conclusion</h2>
+      <p>The MyFlix backend serves as a robust foundation for a full-stack movie application, offering secure, scalable, and maintainable RESTful APIs. It highlights best practices in authentication, data modeling, and API design using modern JavaScript and Node.js tools.</p>
+      <p>Future plans include expanding the API to support admin roles, integrate third-party movie APIs (e.g., TMDB), and implement rate limiting for security.</p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-5 mb-3">
+    <p>&copy; 2024 MyFlix App. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
