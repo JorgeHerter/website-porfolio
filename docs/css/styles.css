@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
 body, html {
     font-family: Arial, sans-serif;
 }
@@ -261,9 +262,9 @@ ul li {
 }
 
 .container h1.display-4 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: black;
-    font-family: 'Playfair Display', serif;
+    font-family: 'UnifrakturCook', cursive;
     font-weight: 700;
     text-shadow: none;
 }
