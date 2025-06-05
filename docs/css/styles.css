@@ -253,59 +253,58 @@ ul li {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* LinkedIn Button */
-.linkedin-btn {
-    background-color: #0077b5;
-    color: white;
+/* Container to keep buttons inline */
+.social-buttons {
+    display: flex;
+    gap: 10px; /* spacing between buttons */
+    flex-wrap: wrap; /* optional: allow wrap on smaller screens */
+}
+
+/* Reuse the previous styles */
+.social-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 10px 12px;
+    border-radius: 6px;
     text-decoration: none;
-}
-
-.linkedin-btn:hover {
-    background-color: #005885;
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-}
-
-/* LinkedIn Icon */
-.linkedin-icon {
-    width: 11px;
-    height: 11px;
-    filter: brightness(0) invert(1);
+    color: white;
     transition: all 0.3s ease;
 }
 
-.linkedin-btn:hover .linkedin-icon {
-    transform: rotate(5deg);
+/* LinkedIn Button */
+.linkedin-btn {
+    background-color: #0077b5;
+}
+.linkedin-btn:hover {
+    background-color: #005885;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* GitHub Button */
 .github-btn {
     background-color: #333;
-    color: white;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
 }
-
 .github-btn:hover {
     background-color: #24292e;
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* GitHub Icon */
-.github-icon {
-    width: 11px;
-    height: 11px;
+/* Icons */
+.social-icon {
+    width: 20px;
+    height: 20px;
     filter: brightness(0) invert(1);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.github-btn:hover .github-icon {
+/* Hover Icon Effects */
+.linkedin-btn:hover .social-icon {
+    transform: rotate(5deg);
+}
+.github-btn:hover .social-icon {
     transform: rotate(-5deg);
 }
 
