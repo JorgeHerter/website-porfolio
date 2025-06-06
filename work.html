@@ -1,75 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Examples</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css"> <!-- Corrected path -->
-    
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<body class="work">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Portfolio Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Work Examples</title>
 
-    <!-- Work Examples Content -->
-    <div class="container mt-5">
-        <h1>Work Examples</h1>
-        <p>Here are some examples of my work:</p>
-        <ul>
-            <li>Project 1:</li>
-            <li>
-                <!-- Corrected the link to use relative path for the Pokedex App -->
-                
-                <a href="https://jorgeherter.github.io/MyPokedexAPP/">My Pokedex App</a>: This is an app I made to show the use of Modals.
-                <a href="docs\pokedex case study.html">Pokedex Case Study</a>
-            </li>
-            <li>Project 2:</li>
-            <li>
-                <!-- Corrected link for backend API to use the actual live URL -->
-                <a href="https://movie-api1-fbc239963864.herokuapp.com/">Back end to my API</a>: This is the backend to my API project.
-                <a href="docs\MyFlix Case Study.html">API Case Study</a>
-            </li>
-            <li>Project 3:</li>
-            <li>
-                <!-- Example of a project link -->
-                <a href="https://jorgeflixapp.netlify.app">Project 3</a>: This is an app I made to let users pick their favorite movies.
-                <a href="docs\MyFlix-clientside Case Study.html">MyFlix Frontend Case Study</a>
-            </li>
-            <li>Project 4:</li>
-            <li>
-                <!-- Example of a project link -->
-                <a href="https://meet-app-psi.vercel.app/">Project 4</a>: This is an app I made using an API from AWSand google Oauth to let users pick events in their favorite cities.
-                <a href="docs/Meet_App Case Study.html">Meet App Case Study</a>
-            </li>
-        </ul>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+
+  <!-- jQuery & Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body class="work">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Portfolio Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Work Examples -->
+  <div class="container mt-5">
+    <h1>Work Examples</h1>
+    <p>Here are some examples of my work:</p>
+
+    <!-- Project 1 -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">My Pokedex App</h5>
+        <p class="card-text">
+          <a href="https://jorgeherter.github.io/MyPokedexAPP/" target="_blank">My Pokedex App</a><br>
+          <a href="docs/pokedex case study.html" target="_blank">Pokedex Case Study</a>
+        </p>
+        <img src="img/pokemon.png" alt="Screenshot of Pokedex App" class="img-fluid mt-2" />
+        <p class="card-text mt-3">
+          <strong>Summary:</strong> A responsive web application using HTML, CSS, JavaScript, jQuery, and the Pokémon API.
+        </p>
+        <div class="text-center mt-3">
+          <a href="https://github.com/jorgeherter/MyPokedexAPP" target="_blank" class="github-btn">
+            <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
+            View Repository
+          </a>
+        </div>
+      </div>
     </div>
 
+    <!-- Project 2 -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">MyFlix API (Backend)</h5>
+        <p class="card-text">
+          <a href="https://movie-api1-fbc239963864.herokuapp.com/" target="_blank">Back end to my API</a><br>
+          <a href="docs/MyFlix Case Study.html" target="_blank">API Case Study</a>
+        </p>
+        <img src="img/myflix-backend-placeholder.png" alt="MyFlix API Screenshot" class="img-fluid mt-2" />
+        <p class="card-text mt-3">
+          <strong>Summary:</strong> REST API built with Node.js, Express, and MongoDB, featuring secure authentication and scalable design.
+        </p>
+        <div class="text-center mt-3">
+          <a href="https://github.com/JorgeHerter/movie_api3.git" target="_blank" class="github-btn">
+            <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
+            View Repository
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">
+          <a href="https://jorgeflixapp.netlify.app" target="_blank">Project 3 – MyFlix App</a>
+        </h5>
+        <p class="card-text">
+          A full-stack React app that allows users to explore and favorite movies.<br>
+          <a href="docs/MyFlix-clientside Case Study.html" target="_blank">MyFlix Frontend Case Study</a>
+        </p>
+        <img src="img/myflix-homepage.png" alt="Screenshot of MyFlix App" class="img-fluid mb-3" />
+        <p class="card-text">
+          <strong>Summary:</strong> Built with React, Node.js, MongoDB, featuring JWT authentication and responsive UI.
+        </p>
+        <div class="text-center mt-3">
+          <a href="https://github.com/jorgeherter/myflix-client" target="_blank" class="github-btn">
+            <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
+            View Repository
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">
+          <a href="https://meet-app-psi.vercel.app/" target="_blank">Project 4 – Meet App</a>
+        </h5>
+        <p class="card-text">
+          A progressive web app to find tech events using Google OAuth and AWS Lambda.<br>
+          <a href="docs/Meet_App Case Study.html" target="_blank">Meet App Case Study</a>
+        </p>
+        <img src="img/meet app1.png" alt="Screenshot of Meet App" class="img-fluid mb-3" />
+        <p class="card-text">
+          <strong>Summary:</strong> Built with React and Vite, features offline support, charts, and TDD workflow.
+        </p>
+        <div class="text-center mt-3">
+          <a href="https://github.com/JorgeHerter/meet_app.git" target="_blank" class="github-btn">
+            <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
+            View Repository
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 George Herter. All rights reserved.</p>
+  </footer>
 </body>
 </html>
-
