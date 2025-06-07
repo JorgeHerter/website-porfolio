@@ -1,221 +1,87 @@
-/* Global Styles */
+/* ========== Global Styles ========== */
 body, html {
-    font-family: Arial, sans-serif;
-}
-body.index, .work {
-    background-color: bisque;
+  font-family: Arial, sans-serif;
 }
 
-/* Styles for the index page */
+body.index, body.work {
+  background-color: bisque;
+  position: relative;
+  z-index: 1;
+}
+
+body.index, body.espanol, body.contact::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body.index, body.espanol {
+  color: whitesmoke;
+}
+
+/* ========== Background Styles ========== */
 body.index {
-    background-image: url('../img/trappers lake.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    min-height: 100vh; /* Ensure the background covers the full viewport height */
+  background: url('../img/trappers lake.svg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: whitesmoke;
 }
 
-/* Styles for the Spanish page */
 body.espanol {
-    background-image: url('../img/monumentvalley.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    min-height: 100vh; /* Ensure the background covers the full viewport height */
+  background: url('../img/monumentvalley.svg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: whitesmoke;
 }
 
-/* Optional: Add a semi-transparent overlay to improve text readability */
-body.index, .espanol, .contact::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.50); /* White overlay with 50% opacity */
-    z-index: -1;
-}
-
-/* Ensure content is above the background */
-body.index, .espanol {
-    position: relative;
-    z-index: 1;
-}
-
-/* Adjust text color for better contrast if needed */
-body.index, .espanol {
-    color: whitesmoke; 
-}
-/* Styles for the contact page */
 body.contact {
-    background-image: url('../img/sma.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    min-height: 100vh;
-    color: whitesmoke;
-    position: relative; /* Ensure the background covers the full viewport height */
+  background: url('../img/sma.svg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: whitesmoke;
+  position: relative;
 }
 
 body.contact::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.3); /* Slight darkening */
-    z-index: -1;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Add this new rule to increase contrast */
 body.contact::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: inherit;
-    background-attachment: fixed;
-    filter: contrast(150%) brightness(110%); /* Adjust these values as needed */
-    z-index: -2;
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  background-attachment: fixed;
+  filter: contrast(150%) brightness(110%);
+  z-index: -2;
 }
 
-body.contact {
- color: whitesmoke;
- 
-}
-
-.modal-dialog {
-    display: flex;
-    align-items: center;
-    min-height: calc(100% - 1rem);
-}
-
-@media (min-width: 576px) {
-    .modal-dialog {
-        min-height: calc(100% - 3.5rem);
-    }
-}
-
-
-
-/* Media query for smaller screens */
+/* Responsive Background Fix */
 @media (max-width: 768px) {
-    body.espanol {
-        background-size: contain; /* or adjust as needed for smaller screens */
-    }
+  body.espanol {
+    background-size: contain;
+  }
 }
 
-/* Adjust the spacing between the image and text */
+/* ========== Layout Utility ========== */
 .row {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-/* Ensure the text is vertically centered */
 .col-md-8 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Contact Form Styles */
-.contact-form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #45a049;
-}
-
-/* Modal Styles */
-#statusModal .modal-content {
-    border-left: 5px solid;
-    background-color: #FFE4C4; /* Bisque color for modal background */
-}
-
-#statusModal .modal-header,
-#statusModal .modal-footer {
-    background-color: #007bff; /* Blue color */
-    color: #fff; /* White text color */
-    padding: 0.75rem 1.25rem;
-}
-
-#statusModal .modal-body {
-    background-color: #FFE4C4; /* Bisque color for modal body */
-}
-
-#statusModal.success .modal-content {
-    border-left-color: #28a745;
-}
-
-#statusModal.error .modal-content {
-    border-left-color: #dc3545;
-}
-
-#statusModal.sending .modal-content {
-    border-left-color: #17a2b8;
-}
-
-/* Status Message Styles */
-.status-message {
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.status-message.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.status-message.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-.status-message.sending {
-    background-color: #cce5ff;
-    color: #004085;
-    border: 1px solid #b8daff;
-}
-/* Vaudeville Frame for .card.mb-4 */
+/* ========== Card Styles (Vaudeville Look) ========== */
 .card.mb-4 {
   border: 8px double #8b4513;
   background: linear-gradient(to bottom right, #f8f1e4, #e5d3b3);
@@ -226,14 +92,13 @@ body.contact {
   font-family: 'Georgia', serif;
 }
 
-/* Optional: Decorative corner flourishes (if image is provided) */
 .card.mb-4::before,
 .card.mb-4::after {
   content: '';
   position: absolute;
   width: 40px;
   height: 40px;
-  background-image: url('../img/corner-flourish.png'); /* Optional vintage graphic */
+  background-image: url('../img/corner-flourish.png');
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.8;
@@ -249,7 +114,6 @@ body.contact {
   right: -10px;
 }
 
-/* Typography inside the vaudeville card */
 .card.mb-4 .card-title {
   font-size: 1.75rem;
   font-weight: bold;
@@ -266,7 +130,6 @@ body.contact {
   line-height: 1.6;
 }
 
-/* Image styling */
 .card.mb-4 img {
   border: 3px solid #8b4513;
   border-radius: 10px;
@@ -274,40 +137,150 @@ body.contact {
   max-width: 100%;
 }
 
-.github-btn {
+/* ========== Contact Form Styles ========== */
+.contact-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    max-width: 90%;
+  }
+}
+
+/* ========== Modal Styles ========== */
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 1rem);
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    min-height: calc(100% - 3.5rem);
+  }
+}
+
+#statusModal .modal-content {
+  border-left: 5px solid;
+  background-color: #FFE4C4; /* Bisque */
+}
+
+#statusModal .modal-header,
+#statusModal .modal-footer {
+  background-color: #007bff;
+  color: white;
+}
+
+#statusModal .modal-body {
+  background-color: #FFE4C4;
+}
+
+#statusModal.success .modal-content {
+  border-left-color: #28a745;
+}
+
+#statusModal.error .modal-content {
+  border-left-color: #dc3545;
+}
+
+#statusModal.sending .modal-content {
+  border-left-color: #17a2b8;
+}
+
+.status-message {
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.status-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.status-message.sending {
+  background-color: #cce5ff;
+  color: #004085;
+  border: 1px solid #b8daff;
+}
+
+/* ========== Social Buttons ========== */
+.social-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 5px;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.github-btn {
   background-color: #333;
   color: white;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 16px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-  font-size: 16px;
 }
 
 .github-btn:hover {
   background-color: #24292e;
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.github-btn .social-icon {
-  width: 20px;
-  height: 20px;
-  filter: brightness(0) invert(1);
+.linkedin-btn {
+  background-color: #0077b5;
+  color: white;
+}
+
+.linkedin-btn:hover {
+  background-color: #005983;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
   margin-right: 8px;
+  vertical-align: middle;
+  filter: brightness(0) invert(1); /* makes dark icons white on dark bg */
 }
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-form {
-        max-width: 90%;
-    }
-}
-
-

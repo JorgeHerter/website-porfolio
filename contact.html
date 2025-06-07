@@ -1,127 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-    <!-- Custom JavaScript -->
-    <script src="javascript/validateandsend.js" defer></script>
+  <!-- Custom JavaScript -->
+  <script src="javascript/validateandsend.js" defer></script>
+
 </head>
 <body class="contact">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Portfolio Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="work.html">Work Examples</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Contact Info Section -->
-    <div class="content-wrapper d-flex align-items-center justify-content-center">
-        <div class="contact">
-            <div class="page-content">
-                <div class="container mt-5 text-center">
-                    <h1>Contact Info</h1>
-                    <div>
-                        <h2>George Herter</h2>
-                        <p>+521 415 115 2364</p>
-                        <p>#2 Chiquitos</p>
-                        <p>Colonia Centro</p>
-                        <p>San Miguel de Allende</p>
-                        <p>37700, GTO</p> 
-                    </div>
-                </div>
-
-                <!-- Buttons Section -->
-                <div class="container mt-4">
-                    <div class="row justify-content-center">
-                        <div class="col-md-6 text-center">
-                            <div class="contact-buttons d-flex justify-content-center flex-wrap gap-2">
-                                <!-- Email Button -->
-                                <button class="btn btn-primary mr-2 mb-2" data-toggle="modal" data-target="#contactModal">
-                                    Email Me
-                                </button>
-
-                                <!-- LinkedIn Button -->
-                              <div class="social-buttons">
-                                <!-- LinkedIn Button -->
-                                <a href="https://www.linkedin.com/in/george-herter-7383441b6"
-                                target="_blank"
-                                class="social-btn linkedin-btn"
-                                title="Connect with me on LinkedIn">
-                                    <img src="img/317725_linkedin_social_icon.png" alt="LinkedIn" class="social-icon">
-                                </a>
-
-                                <!-- GitHub Button -->
-                                <a href="https://github.com/JorgeHerter/website-porfolio.git"
-                                target="_blank"
-                                class="social-btn github-btn"
-                                title="View my GitHub">
-                                    <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon">
-                                </a>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Portfolio Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="work.html">Work Examples</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- Contact Modal -->
-    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">Contact Form</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="contact-form text-center">
-                        <div class="form-group">
-                            <input type="text" id="fullName" class="form-control mb-3" placeholder="Enter Your Full Name" required />
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="emailInput" class="form-control mb-3" placeholder="Enter Valid Email" required />
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" class="form-control mb-3" placeholder="Enter Your Message" rows="4" required></textarea>
-                        </div>
-                        <button class="btn btn-primary" onclick="validateAndSend()">Submit</button>
-                    </div>
-                </div>
-            </div>
+  <!-- Contact Info Section -->
+  <div class="content-wrapper d-flex align-items-center justify-content-center">
+    <div class="contact">
+      <div class="page-content">
+        <div class="container mt-5 text-center">
+          <h1>Contact Info</h1>
+          <div>
+            <h2>George Herter</h2>
+            <p>Full Stack Developer</p>
+            <p>6008 Goliad Ave.</p>
+            <p>Dallas</p>
+            <p>Texas</p>
+            <p>75206</p> 
+          </div>
         </div>
+
+        <!-- Social Buttons -->
+        <div class="container mt-4 text-center">
+          <a href="https://www.linkedin.com/in/george-herter-7383441b6"
+             target="_blank"
+             class="social-btn linkedin-btn"
+             title="Connect with me on LinkedIn">
+            <img src="img/317725_linkedin_social_icon.png" alt="LinkedIn" class="social-icon">
+            Connect on LinkedIn
+          </a>
+
+          <a href="https://https://github.com/JorgeHerter"
+             target="_blank"
+             class="social-btn github-btn"
+             title="View my GitHub">
+            <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon">
+            View GitHub Profile
+          </a>
+        </div>
+
+        <!-- Email Button -->
+        <div class="container mt-4 text-center">
+          <button class="btn btn-primary" data-toggle="modal" data-target="#contactModal">Email Me</button>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Contact Form</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="contact-form text-center">
+            <div class="form-group">
+              <input type="text" id="fullName" class="form-control mb-3" placeholder="Enter Your Full Name" required />
+            </div>
+            <div class="form-group">
+              <input type="email" id="emailInput" class="form-control mb-3" placeholder="Enter Valid Email" required />
+            </div>
+            <div class="form-group">
+              <textarea id="message" class="form-control mb-3" placeholder="Enter Your Message" rows="4" required></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="validateAndSend()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
+
 
