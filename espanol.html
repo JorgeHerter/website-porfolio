@@ -4,51 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Sitio Web</title>
-    
-    <!-- Bootstrap CSS -->
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css"> <!-- Corrected path -->
-    
-    <!-- jQuery -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS when the document is ready
+        $(document).ready(function () {
+            AOS.init({
+                once: true, // Whether animation should happen only once - default true
+                duration: 800, // values from 0 to 3000, with step 50ms
+                easing: 'ease-out-back', // default easing for AOS animations
+            });
+        });
+    </script>
 </head>
 <body class="espanol">
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Mi Sitio de Web</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            
             <ul class="navbar-nav ml-auto">
-                <!-- Other menu items can be added here -->
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <!-- Language switch button -->
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        <!-- Corrected image path -->
-                        <img src="img/united-kingdom.png" alt="English" style="width: 20px; height: 20px;"> 
+                    <a class="nav-link" href="index.html" title="Cambiar a Inglés">
+                        <img src="img/united-kingdom.png" alt="English" style="width: 24px; height: 16px; margin-right: 5px;"> Inglés
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container mt-5 text-center d-flex align-items-center justify-content-center" style="min-height: 80vh;">
         <div class="row align-items-center">
-            <div class="col-md-4">
-                <!-- Corrected image path -->
-                <img src="img/weddingpic.jpg" class="img-fluid rounded-circle" alt="Wedding Picture">
+            <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-right" data-aos-delay="200">
+                <img src="img/weddingpic.jpg" class="img-fluid rounded-circle" alt="Wedding Picture" style="width: 250px; height: 250px; object-fit: cover;">
             </div>
-            <div class="col-md-8">
-                <h1>Bienvenidos</h1>
-                <p>Me llamo Jorge.</p>
-                <p>Soy diseñador de sitios web.</p>
-                <p>Gracias por venir y ver mi trabajo.</p>
+            <div class="col-md-7" data-aos="fade-left" data-aos-delay="400">
+                <h1 class="display-3 font-weight-bold mb-3">Bienvenidos</h1>
+                <p class="lead mb-4">Me llamo Jorge.</p>
+                <p class="lead mb-4">Soy desarrollador full-stack.</p>
+                <p class="lead mb-4">Gracias por visitar mi portafolio.</p>
             </div>
         </div>
     </div>

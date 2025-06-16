@@ -284,3 +284,20 @@ body.contact::after {
   vertical-align: middle;
   filter: brightness(0) invert(1); /* makes dark icons white on dark bg */
 }
+/* ========== Text Effects ========== */
+@keyframes flashText {
+    0%, 100% {
+        opacity: 1;
+        /* You could also animate color, e.g., color: var(--random-color); */
+    }
+    50% {
+        opacity: 0.2; /* Makes it almost disappear */
+    }
+}
+
+.flash-letter {
+    display: inline-block; /* Important for animation to apply correctly to each letter */
+    animation: flashText 0.3s ease-out forwards; /* 0.3s duration, eases out, stays at end state */
+    animation-iteration-count: 3; /* Flash 3 times, then stop */
+    /* Be cautious with infinite flashing for accessibility. 3 times is usually enough. */
+}

@@ -3,19 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About</title>
+  <title>About George Herter</title>
 
-  <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 
-  <!-- jQuery and Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  <!-- Animate on scroll (AOS) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -26,7 +22,6 @@
 </head>
 
 <body class="about">
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Portfolio Website</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -39,71 +34,112 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
+        <li class="nav-item active"> <a class="nav-link" href="about.html">About <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="work.html">Work Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <!-- About Intro -->
-  <div class="container mt-5">
-    <h1>About Me</h1>
-    <p>Welcome to my portfolio website. Here you can find information about my work, contact details, and examples of my projects.</p>
+  <div class="container mt-5 text-center" data-aos="fade-in">
+    <h1 class="display-4 font-weight-bold">George Henry Herter</h1>
+    <p class="lead text-muted">Full-Stack Developer | Cloud-Native Enthusiast | Bridging Operational Excellence with Innovative Code.</p>
+    <p>Welcome! I'm a dedicated full-stack developer with a unique background in construction and logistics, bringing robust project management and problem-solving skills to the tech world. Explore my work, get in touch, or learn more about my journey below.</p>
   </div>
 
-  <div class="text-center my-4">
-  <a href="assets/GEORGE_HENRYHERTER_Resume.pdf" class="btn btn-primary" download>
-    📄 Download Résumé (PDF)
-  </a>
+  <div class="text-center my-4" data-aos="fade-up" data-aos-delay="200">
+    <a href="assets/GEORGE_HENRYHERTER_Resume.pdf" class="btn btn-primary btn-lg" download>
+      📄 Download Résumé (PDF)
+    </a>
   </div>
 
-
-  <!-- Resume Card -->
-  <div class="container mb-5" data-aos="fade-up">
-    <div class="card mb-4">
-      <div class="card-body">
-        <h2 class="card-title text-center">Résumé – George Henry Herter</h2>
+  <div class="container mb-5" data-aos="fade-up" data-aos-delay="300">
+    <div class="card mb-4 shadow-lg"> <div class="card-body">
+        <h2 class="card-title text-center mb-4">Résumé – George Henry Herter</h2>
         <div class="row">
-          <!-- Column 1 -->
-          <div class="col-md-6">
-            <p><strong>Email:</strong> jorgeherter@gmail.com</p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/george-herter-7383441b6" target="_blank">linkedin.com/in/george-herter</a></p>
+          <div class="col-md-6 border-right pr-md-4"> <p class="mb-2"><strong>Email:</strong> jorgeherter@gmail.com</p>
+            <p class="mb-4"><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/george-herter-7383441b6" target="_blank">linkedin.com/in/george-herter</a></p>
 
-            <h4>Summary</h4>
-            <p>Full-stack developer transitioning into cloud-native and serverless technologies. Proficient in JavaScript/TypeScript, React, and Node.js. Expanding into AWS services like Lambda, DynamoDB, and CDK. Strong collaboration and real-world project experience through CareerFoundry. Bilingual in English and Spanish.</p>
+            <h4 class="mt-4">Summary</h4>
+            <p>
+              Results-driven Full-Stack Developer transitioning into cloud-native and serverless solutions, specializing in building scalable and efficient web applications. Proficient in <strong>JavaScript/TypeScript, React, and Node.js</strong>, with hands-on experience expanding into <strong>AWS services</strong> like Lambda, DynamoDB, S3, and CDK for resilient backend architectures. My background in construction and logistics uniquely equips me with <strong>strong project management, problem-solving, and cross-functional team leadership skills</strong>, ensuring practical and efficient development workflows. Bilingual in English and Spanish.
+            </p>
 
-            <h4>Education</h4>
+            <h4 class="mt-4">Education</h4>
             <ul>
-              <li>Full-Stack Web Development Certificate (CareerFoundry, expected 2025)</li>
-              <li>Intro to Web Development (CareerFoundry, 2024)</li>
+              <li><strong>Full-Stack Web Development Certificate</strong> (CareerFoundry, expected 2025) – Comprehensive program focusing on JavaScript, React, Node.js, and database integration; hands-on projects including a full-stack MERN application.</li>
+              <li><strong>Intro to Web Development</strong> (CareerFoundry, 2024) – Foundational skills in HTML, CSS, and JavaScript, building interactive web pages.</li>
               <li>B.A. Latin American History – Fort Lewis College</li>
             </ul>
           </div>
 
-          <!-- Column 2 -->
-          <div class="col-md-6">
-            <h4>Technical Skills</h4>
+          <div class="col-md-6 pl-md-4">
+            <h4 class="mt-md-0 mt-4">Technical Skills</h4>
             <ul>
-              <li><strong>Languages:</strong> TypeScript, JavaScript, React, Node.js</li>
-              <li><strong>Cloud & Serverless:</strong> AWS Lambda, DynamoDB, S3, API Gateway</li>
+              <li><strong>Languages & Frameworks:</strong> TypeScript, JavaScript, React, Node.js</li>
+              <li><strong>Cloud & Serverless:</strong> AWS Lambda, DynamoDB, S3, API Gateway, CDK</li>
               <li><strong>API & Backend:</strong> REST APIs, MongoDB, Express</li>
-              <li><strong>Dev Tools:</strong> Git, GitHub, Postman, Jest</li>
+              <li><strong>Dev Tools & Methodologies:</strong> Git, GitHub, Postman, Jest, Agile principles</li>
             </ul>
 
-            <h4>Experience</h4>
-            <p><strong>Casa Tres Cervezas (2009–Present)</strong><br>Construction & Logistics Manager — Led cross-functional teams, managed project delivery, and coordinated reporting across departments.</p>
+            <h4 class="mt-4">Experience</h4>
+            <p><strong>Casa Tres Cervezas (2009–Present)</strong><br>
+            Construction & Logistics Manager – San Miguel de Allende, GTO</p>
+            <ul>
+              <li>Led cross-functional teams of **10+ personnel**, overseeing project lifecycle from planning to delivery across **multiple construction projects simultaneously**.</li>
+              <li>Managed complex logistics and supply chains, ensuring **timely availability of resources** and **optimizing project timelines**.</li>
+              <li>Coordinated detailed reporting across departments, enhancing **transparency and data-driven decision-making**.</li>
+              <li>Cultivated strong **problem-solving skills** in dynamic environments, consistently delivering projects on schedule and within budget.</li>
+            </ul>
 
-            <p><strong>Bay 10 Ventures (2000–2008)</strong><br>Construction Manager — Oversaw operations and task tracking, developed process documentation, and managed daily logistics.</p>
+            <p class="mt-4"><strong>Bay 10 Ventures (2000–2008)</strong><br>
+            Construction Manager – [City, State, if relevant]</p>
+            <ul>
+              <li>Oversaw daily operations and task tracking for construction projects, **optimizing workflow efficiency**.</li>
+              <li>Developed and implemented **process documentation**, improving team adherence and project consistency.</li>
+              <li>Managed daily logistics and resource allocation for teams of [X] members, ensuring project continuity.</li>
+            </ul>
           </div>
         </div>
+
+        <h4 class="mt-5 text-center">Featured Projects</h4>
+        <p class="text-center text-muted">A glimpse into my hands-on development experience. Click below to see more!</p>
+        <div class="row mt-3 justify-content-center">
+            <div class="col-md-5 mb-4" data-aos="zoom-in">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">ChatApp (React Native)</h5>
+                        <p class="card-text text-muted">A real-time mobile chat application built with React Native and Expo, utilizing Google Firestore Database for messaging and Firebase Cloud Storage for media. Features include image and location sharing, and anonymous user authentication.</p>
+                        <ul class="list-unstyled small text-muted">
+                            <li><span class="font-weight-bold">Tech:</span> React Native, Expo, Firebase (Firestore, Auth, Storage)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">MyFlix (MERN Stack)</h5>
+                        <p class="card-text text-muted">A full-stack movie application allowing users to register, browse movies, and create personalized lists. Developed using MongoDB, Express.js, React, and Node.js, focusing on RESTful API design and responsive client-side functionality.</p>
+                        <ul class="list-unstyled small text-muted">
+                            <li><span class="font-weight-bold">Tech:</span> MongoDB, Express.js, React, Node.js, REST APIs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="200">
+          <a href="work.html" class="btn btn-info btn-lg">Explore More Work Examples &rarr;</a>
+        </div>
+
       </div>
     </div>
   </div>
-  <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
     <p>&copy; 2025 George Herter. All rights reserved.</p>
   </footer>
