@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    // Select the H1 element using its current classes
-    const h1Element = $(".display-5.font-weight-bold.mb-3");
+    // Select the H1 element using its new specific class
+    const h1Element = $(".main-page-title"); // <--- CHANGED THIS LINE
 
     if (h1Element.length) {
         // 1. Randomize Color Function
