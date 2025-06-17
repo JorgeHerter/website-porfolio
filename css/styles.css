@@ -31,6 +31,11 @@ body.work, body.about {
     color: initial;
 }
 
+.navbar {
+    z-index: 1050;
+    position: relative;
+}
+
 /* ========== Layout Utility ========== */
 .main-content-wrapper {
     flex-grow: 1;
