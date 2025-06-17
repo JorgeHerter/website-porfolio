@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>George Herter | Desarrollador Full-Stack</title> <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>George Herter | Desarrollador Full-Stack</title> 
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -12,66 +13,65 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS when the document is ready
         $(document).ready(function () {
             AOS.init({
-                once: true, // Whether animation should happen only once - default true
-                duration: 800, // values from 0 to 3000, with step 50ms
-                easing: 'ease-out-back', // default easing for AOS animations
+                once: true,
+                duration: 800,
+                easing: 'ease-out-back',
             });
         });
     </script>
     <style>
-        /* This style block is added for precise vertical centering */
-        /* It accounts for the fixed navbar's height */
         body {
-            /* Ensures no default margin/padding pushes content down */
             margin: 0;
             padding: 0;
-            display: flex; /* Make body a flex container */
-            flex-direction: column; /* Stack children vertically */
-            min-height: 100vh; /* Ensure body takes full viewport height */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* Adjust content below the fixed navbar */
         .main-content-wrapper {
-            flex-grow: 1; /* Allows it to take all available space */
-            display: flex; /* Make it a flex container for centering */
-            align-items: center; /* Vertically center its content */
-            justify-content: center; /* Horizontally center its content */
-            padding-top: 56px; /* Adjust this value to match your navbar's height */
-                                    /* This pushes the content down below the navbar */
-            padding-bottom: 20px; /* Optional: Add some padding at the bottom */
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 56px;
+            padding-bottom: 20px;
         }
 
-        /* You might want to remove min-height: 80vh; from .text-light... div
-            if .main-content-wrapper now handles the height */
         .text-light.text-center.d-flex.align-items-center {
-            min-height: auto; /* Reset or remove this as the parent now controls height */
-            margin-bottom: 0; /* Keep this if you want no margin below */
+            min-height: auto;
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body class="index">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Sitio Web de Portafolio</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">Sitio Web de Portafolio</a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a> </li>
+                    <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a> 
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">Sobre Mí</a> </li>
+                    <a class="nav-link" href="about.html">Sobre Mí</a> 
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="work.html">Ejemplos de Trabajo</a> </li>
+                    <a class="nav-link" href="work.html">Ejemplos de Trabajo</a> 
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contacto</a> </li>
+                    <a class="nav-link" href="contact.html">Contacto</a> 
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center" href="espanol.html" title="Cambiar a Inglés"> <img src="img/united-kingdom.png" alt="Inglés" style="width: 24px; height: 16px; margin-right: 5px;"> 
-                        Inglés </a>
+                    <a class="nav-link d-flex align-items-center" href="index.html" title="Cambiar a Inglés"> 
+                        <img src="img/united-kingdom.png" alt="Inglés" style="width: 24px; height: 16px; margin-right: 5px;"> 
+                        Inglés 
+                    </a>
                 </li>
             </ul>
         </div>
