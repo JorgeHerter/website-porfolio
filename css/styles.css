@@ -2,21 +2,22 @@
 /* Universal font and consistent box model across all elements */
 body, html {
     font-family: Arial, sans-serif;
-    box-sizing: border-box; /* Ensures padding and border are included in an element's total width/height */
+    box-sizing: border-box;
 }
+
 *, *::before, *::after {
-    box-sizing: inherit; /* All elements inherit the box-sizing from their parent */
+    box-sizing: inherit;
 }
 
 /* Base styles for the body to enable full-height flex layout and common properties */
 body {
-    position: relative; /* Essential for correctly positioning pseudo-elements and other children */
-    min-height: 100vh; /* Ensures the body always takes at least the full viewport height */
-    display: flex; /* Makes the body a flex container */
-    flex-direction: column; /* Stacks its direct children (like navbar and main content) vertically */
-    margin: 0; /* Removes default browser margin */
-    padding: 0; /* Removes default browser padding */
-    overflow-x: hidden; /* Prevents horizontal scrollbars from appearing, especially important for responsive designs */
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 /* Common text color for pages with dark backgrounds (e.g., index, espanol) */
@@ -27,20 +28,17 @@ body.index, body.espanol {
 /* Specific background colors for non-image pages (e.g., work, about) */
 body.work, body.about {
     background-color: bisque;
-    color: initial; /* Resets text color to its default for light backgrounds */
+    color: initial;
 }
 
----
-
 /* ========== Layout Utility ========== */
-/* This wrapper handles vertical centering of your main content below the fixed navbar */
 .main-content-wrapper {
-    flex-grow: 1; /* Allows this wrapper to expand and fill all available vertical space */
-    display: flex; /* Makes it a flex container for its own content */
-    align-items: center; /* Vertically centers the items within this wrapper */
-    justify-content: center; /* Horizontally centers the items within this wrapper */
-    padding-top: 70px; /* IMPORTANT: Adjust this value to create space below your fixed navbar */
-    padding-bottom: 20px; /* Optional: Adds a little space at the bottom of the content */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 15px 20px; /* Added horizontal padding for mobile */
+    word-wrap: break-word; /* Ensure long words break on mobile */
 }
 
 /* Standard row margin for consistent spacing between rows */
@@ -55,22 +53,18 @@ body.work, body.about {
     justify-content: center;
 }
 
-
-
 /* ========== Page Specific Backgrounds ========== */
-/* General setup for all page backgrounds using a ::before pseudo-element */
-/* This approach provides robust control over fixed vs. scrolling backgrounds across devices */
 body::before {
     content: '';
-    position: fixed; /* Default: Creates a fixed background effect for desktop views */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-size: cover; /* Ensures the image covers the entire area, cropping if necessary */
-    background-position: center center; /* Centers the image within its container */
-    z-index: -1; /* Places the background layer behind your main content */
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
 }
 
 /* Specific background images for each page */
@@ -84,179 +78,120 @@ body.espanol::before {
 
 body.contact::before {
     background-image: url('../img/sma.svg');
-    /* This rule defines the background image for the contact page */
-    background-color: rgba(0, 0, 0, 0.3); /* Adds a dark overlay on top of the image */
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Specific filter layer for the contact page background (from your original code) */
+/* Specific filter layer for the contact page background */
 body.contact::after {
     content: '';
-    position: fixed; /* Keeps it fixed for desktop, like the ::before */
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    /* For `background: inherit` to work here with `::before`'s background image,
-       the image would need to be applied to the `body` itself, not just `::before`.
-       If you intend for this filter to apply to the image set on `::before`,
-       you might need to replicate the background-image here, or use a different layering approach.
-       Keeping as `inherit` for now as per your original intent. */
     background: inherit;
-    background-attachment: fixed; /* This will be overridden on mobile, as below */
-    filter: contrast(150%) brightness(110%); /* Applies a visual filter effect */
-    z-index: -2; /* Positions this layer even further back than the ::before background */
+    background-attachment: fixed;
+    filter: contrast(150%) brightness(110%);
+    z-index: -2;
 }
 
-
-/* ========== Responsive Background & Layout Adjustments ========== */
-/* These media queries adjust styles for different screen sizes, prioritizing mobile responsiveness. */
-
-@media (max-width: 768px) {
-    /* For smaller screens (e.g., tablets, phones), backgrounds change from fixed to absolute.
-       This prevents issues with 'background-attachment: fixed' on many mobile browsers,
-       ensuring backgrounds scroll smoothly with content. */
-    body::before,
-    body.contact::after {
-        position: absolute; /* Background now scrolls with the content */
-    }
-
-    /* Specific adjustment for the 'espanol' page background on mobile.
-       The image will now fit entirely within the viewport. */
-    body.espanol::before {
-        background-size: contain;
-        background-position: top center; /* Positions the image at the top-center when 'contain' is used */
-    }
-
-    /* Adjust the main page title font size for medium-sized screens (e.g., tablets in portrait). */
-    .main-page-title {
-        font-size: 2.5rem;
-    }
-
-    /* Adjust contact form width for better usability on smaller screens. */
-    .contact-form {
-        max-width: 90%;
-    }
-
-    /* Adjust 'display-3' heading for the 'espanol' page on small screens for better fit. */
-    .espanol .display-3 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 576px) {
-    /* Further adjust the main page title font size for very small screens (mobile phones). */
-    .main-page-title {
-        font-size: 1.75rem;
-    }
+/* ========== Typography - Mobile First Approach ========== */
+/* Base font size for the main heading - mobile first */
+.main-page-title {
+    font-size: 1.75rem; /* Start small for mobile */
+    white-space: normal; /* ALLOW TEXT WRAPPING - this was your main issue */
+    overflow: visible; /* Don't hide overflowing content */
+    text-overflow: clip; /* Don't add ellipsis */
+    word-wrap: break-word; /* Break long words if needed */
+    hyphens: auto; /* Add hyphens for better breaking */
+    text-align: center; /* Center align for better mobile appearance */
+    line-height: 1.2; /* Tighter line height for mobile */
+    margin: 0 auto; /* Center the title */
+    max-width: 100%; /* Ensure it doesn't exceed container */
 }
 
 /* ========== Text Effects ========== */
-/* Defines a 'flashText' animation for subtle visual emphasis. */
 @keyframes flashText {
     0%, 100% {
-        opacity: 1; /* Fully visible at the start and end of the animation cycle */
+        opacity: 1;
     }
     50% {
-        opacity: 0.2; /* Almost disappears in the middle, creating a 'flash' effect */
+        opacity: 0.2;
     }
 }
 
-/* Applies the 'flashText' animation to individual letters. */
 .flash-letter {
-    display: inline-block; /* Crucial for applying transformations and animations to each letter */
-    animation: flashText 0.3s ease-out forwards; /* 0.3-second animation, eases out, and stays at its final state */
-    animation-iteration-count: 3; /* The animation repeats exactly 3 times, then stops */
+    display: inline-block;
+    animation: flashText 0.3s ease-out forwards;
+    animation-iteration-count: 3;
 }
-
-.flash-letter {
-    display: inline-block; /* Crucial for animation to apply correctly to each individual letter */
-    animation: flashText 0.3s ease-out forwards; /* 0.3-second animation, eases out, stays at its final state */
-    animation-iteration-count: 3; /* The animation repeats 3 times, then stops */
-}
-
-/* Base font size for the main heading on larger screens */
-.main-page-title {
-    font-size: 4rem;
-    white-space: nowrap; /* Tries to keep all text on one line unless forced to wrap */
-    overflow: hidden; /* Hides any content that overflows its container */
-    text-overflow: ellipsis; /* Adds "..." if text is cut off (less common with font-size adjustments) */
-}
-
-@media (max-width: 992px) { /* Adjust for medium screens (e.g., tablets in landscape, small laptops) */
-    .main-page-title {
-        font-size: 3.25rem; /* Smaller font size */
-    }
-}
-
-
----
 
 /* ========== Card Styles (Vaudeville Look) ========== */
 .card.mb-4 {
-    border: 8px double #8b4513; /* Double border for a distinct look */
-    background: linear-gradient(to bottom right, #f8f1e4, #e5d3b3); /* Soft gradient background */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
-    border-radius: 15px; /* Rounded corners */
+    border: 8px double #8b4513;
+    background: linear-gradient(to bottom right, #f8f1e4, #e5d3b3);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
     padding: 1rem;
     position: relative;
-    font-family: 'Georgia', serif; /* Classic serif font */
+    font-family: 'Georgia', serif;
+    margin: 0 10px; /* Add horizontal margin for mobile */
+    max-width: 100%; /* Ensure cards don't exceed screen width */
 }
 
-/* Decorative corner flourishes for the cards */
 .card.mb-4::before,
 .card.mb-4::after {
     content: '';
     position: absolute;
     width: 40px;
     height: 40px;
-    background-image: url('../img/corner-flourish.png'); /* Image for the flourish */
-    background-size: contain; /* Ensures the image fits within the 40x40px area */
+    background-image: url('../img/corner-flourish.png');
+    background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.8; /* Slight transparency */
+    opacity: 0.8;
 }
 
-/* Positioning for the top-left flourish */
 .card.mb-4::before {
     top: -10px;
     left: -10px;
 }
 
-/* Positioning for the bottom-right flourish */
 .card.mb-4::after {
     bottom: -10px;
     right: -10px;
 }
 
 .card.mb-4 .card-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem; /* Smaller for mobile */
     font-weight: bold;
-    color: #4b2e1e; /* Dark brown color */
-    text-shadow: 1px 1px 1px #fff; /* Subtle white text shadow */
-    border-bottom: 2px dashed #8b4513; /* Dashed line separator */
+    color: #4b2e1e;
+    text-shadow: 1px 1px 1px #fff;
+    border-bottom: 2px dashed #8b4513;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+    word-wrap: break-word; /* Ensure titles wrap */
 }
 
 .card.mb-4 .card-text {
-    color: #3a2c1a; /* Darker text color */
-    font-size: 1.1rem;
-    line-height: 1.6; /* Improved readability for body text */
+    color: #3a2c1a;
+    font-size: 1rem; /* Slightly smaller for mobile */
+    line-height: 1.6;
+    word-wrap: break-word; /* Ensure text wraps */
 }
 
 .card.mb-4 img {
-    border: 3px solid #8b4513; /* Border around images within cards */
+    border: 3px solid #8b4513;
     border-radius: 10px;
     margin-top: 1rem;
     max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
 }
-
----
 
 /* ========== Contact Form Styles ========== */
 .contact-form {
-    max-width: 400px; /* Limits the form width */
-    margin: 20px auto; /* Centers the form horizontally with top/bottom margin */
-    padding: 20px;
+    max-width: 95%; /* More space on mobile */
+    margin: 20px auto;
+    padding: 15px; /* Smaller padding on mobile */
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -265,73 +200,71 @@ body.contact::after {
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%; /* Full width within the form container */
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+    box-sizing: border-box;
+    font-size: 16px; /* Prevents zoom on iOS */
 }
 
 .contact-form button {
     width: 100%;
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Green background */
+    padding: 12px 20px; /* Slightly larger touch target */
+    background-color: #4CAF50;
     color: white;
     font-size: 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049;
 }
 
-
----
-
 /* ========== Modal Styles ========== */
-/* Ensures modal dialogs are vertically centered */
 .modal-dialog {
     display: flex;
     align-items: center;
-    min-height: calc(100% - 1rem); /* Ensures it takes up most of the viewport height */
+    min-height: calc(100% - 1rem);
+    margin: 0.5rem; /* Add margin for mobile */
 }
 
 @media (min-width: 576px) {
     .modal-dialog {
-        min-height: calc(100% - 3.5rem); /* Adjustment for larger screens */
+        min-height: calc(100% - 3.5rem);
+        margin: 1.75rem auto; /* Reset margin for larger screens */
     }
 }
 
 #statusModal .modal-content {
-    border-left: 5px solid; /* Left border for status indication */
-    background-color: #FFE4C4; /* Bisque background */
+    border-left: 5px solid;
+    background-color: #FFE4C4;
 }
 
 #statusModal .modal-header,
 #statusModal .modal-footer {
-    background-color: #007bff; /* Bootstrap primary blue */
+    background-color: #007bff;
     color: white;
 }
 
 #statusModal .modal-body {
-    background-color: #FFE4C4; /* Bisque background for body */
+    background-color: #FFE4C4;
 }
 
-/* Specific border colors for different status types */
 #statusModal.success .modal-content {
-    border-left-color: #28a745; /* Green for success */
+    border-left-color: #28a745;
 }
 
 #statusModal.error .modal-content {
-    border-left-color: #dc3545; /* Red for error */
+    border-left-color: #dc3545;
 }
 
 #statusModal.sending .modal-content {
-    border-left-color: #17a2b8; /* Teal for sending */
+    border-left-color: #17a2b8;
 }
 
 .status-message {
@@ -341,7 +274,6 @@ body.contact::after {
     margin-top: 10px;
 }
 
-/* Specific background and text colors for status messages */
 .status-message.success {
     background-color: #d4edda;
     color: #155724;
@@ -360,20 +292,19 @@ body.contact::after {
     border: 1px solid #b8daff;
 }
 
----
-
 /* ========== Social Buttons ========== */
 .social-btn {
-    display: inline-flex; /* Allows icon and text to be on the same line and centered */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 16px;
+    padding: 10px 16px; /* Larger touch target for mobile */
     border: none;
     border-radius: 5px;
     font-weight: 500;
     text-decoration: none;
     margin: 5px;
-    transition: background-color 0.3s ease, opacity 0.3s ease; /* Smooth hover effects */
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    min-height: 44px; /* Minimum touch target size */
 }
 
 .github-btn {
@@ -382,22 +313,106 @@ body.contact::after {
 }
 
 .github-btn:hover {
-    background-color: #24292e; /* Darker on hover */
+    background-color: #24292e;
 }
 
 .linkedin-btn {
-    background-color: #0077b5; /* LinkedIn blue */
+    background-color: #0077b5;
     color: white;
 }
 
 .linkedin-btn:hover {
-    background-color: #005983; /* Darker on hover */
+    background-color: #005983;
 }
 
 .social-icon {
     width: 24px;
     height: 24px;
-    margin-right: 8px; /* Space between icon and text */
+    margin-right: 8px;
     vertical-align: middle;
-    filter: brightness(0) invert(1); /* Makes dark icons white on dark backgrounds */
+    filter: brightness(0) invert(1);
+}
+
+/* ========== Responsive Breakpoints ========== */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .main-page-title {
+        font-size: 2.25rem;
+    }
+    
+    .card.mb-4 .card-title {
+        font-size: 1.6rem;
+    }
+    
+    .contact-form {
+        max-width: 400px;
+        padding: 20px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .main-page-title {
+        font-size: 2.75rem;
+    }
+    
+    .card.mb-4 .card-title {
+        font-size: 1.75rem;
+    }
+    
+    .card.mb-4 .card-text {
+        font-size: 1.1rem;
+    }
+    
+    .main-content-wrapper {
+        padding: 70px 30px 20px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .main-page-title {
+        font-size: 3.5rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .main-page-title {
+        font-size: 4rem;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+    /* Ensure backgrounds scroll with content on mobile */
+    body::before,
+    body.contact::after {
+        position: absolute;
+    }
+
+    /* Specific adjustment for the 'espanol' page background on mobile */
+    body.espanol::before {
+        background-size: contain;
+        background-position: top center;
+    }
+
+    /* Ensure all text elements can wrap */
+    h1, h2, h3, h4, h5, h6,
+    .display-1, .display-2, .display-3, .display-4 {
+        word-wrap: break-word;
+        hyphens: auto;
+        white-space: normal;
+    }
+    
+    /* Adjust display headings for mobile */
+    .display-3 {
+        font-size: 2rem;
+    }
+    
+    /* Add padding to prevent content from touching screen edges */
+    .container, .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
