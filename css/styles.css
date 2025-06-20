@@ -82,7 +82,7 @@ body.espanol::before {
 }
 
 body.contact::before {
-    background-image: url('../img/sma.svg');
+    background-image: url('../img/monumentvalley.svg');
     background-color: rgba(0, 0, 0, 0.3);
 }
 
