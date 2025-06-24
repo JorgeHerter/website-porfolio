@@ -77,10 +77,6 @@ body.index::before {
     background-image: url('../img/trappers lake.svg');
 }
 
-body.espanol::before {
-    background-image: url('../img/monumentvalley.svg');
-}
-
 body.contact::before {
     background-image: url('../img/monumentvalley.svg');
     background-color: rgba(0, 0, 0, 0.3);
