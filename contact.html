@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,92 +6,77 @@
     <title>Contact</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS when the document is ready
         $(document).ready(function () {
             AOS.init({
-                once: true, // Whether animation should happen only once - default true
-                duration: 800, // values from 0 to 3000, with step 50ms
-                easing: 'ease-out-back', // default easing for AOS animations
+                once: true,
+                duration: 800,
+                easing: 'ease-out-back',
             });
         });
     </script>
-
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
     <script src="javascript/validateandsend.js" defer></script>
-
 </head>
 <body class="contact">
 
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                        <a class="navbar-brand" href="#">Portfolio Website</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                            <ul class="navbar-nav mx-auto">
-                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                                <li class="nav-item"><a class="nav-link" href="work.html">Work Examples</a></li>
-                                <li class="nav-item active"><a class="nav-link" href="contact.html">Contact <span class="sr-only">(current)</span></a></li>
-                            </ul>
-                        </div>
-                    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Portfolio Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="work.html">Work Examples</a></li>
+                <li class="nav-item active"><a class="nav-link" href="contact.html">Contact <span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div>
+    </nav>
 
-                    <div class="content-wrapper d-flex align-items-center justify-content-center">
-                    <div class="contact">
-                        <div class="page-content">
-                            <div class="container mt-5 text-center" data-aos="fade-right">
-                                <h1 style="color: #f8f9fa;">Contact Info</h1>
-                                <div>
-                                    <h2 style="color: #f8f9fa;">George Herter</h2>
-                                    <p style="color: #f8f9fa;">Full Stack Developer</p>
-                                    <p style="color: #f8f9fa;">Dallas</p>
-                                    <p style="color: #f8f9fa;">Texas</p>
-                                    <p style="color: #f8f9fa;">75206</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container mt-4 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <a href="https://www.linkedin.com/in/george-herter-7383441b6"
-                        target="_blank"
-                        class="social-btn linkedin-btn"
-                        title="Connect with me on LinkedIn">
-                        <img src="img/317725_linkedin_social_icon.png" alt="LinkedIn" class="social-icon">
-                        Connect on LinkedIn
-                    </a>
-
-                    <a href="https://github.com/JorgeHerter"
-                        target="_blank"
-                        class="social-btn github-btn"
-                        title="View my GitHub">
-                        <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon">
-                        View GitHub Profile
-                    </a>
-                </div>
-
-                <div class="container mt-4 text-center" data-aos="fade-up" data-aos-delay="400">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#contactModal">Email Me</button>
+    <div class="main-content-wrapper">
+        <div class="page-content">
+            <div class="container mt-5 text-center" data-aos="fade-right">
+                <h1 style="color: #f8f9fa;">Contact Info</h1>
+                <div>
+                    <h2 style="color: #f8f9fa;">George Herter</h2>
+                    <p style="color: #f8f9fa;">Full Stack Developer</p>
+                    <p style="color: #f8f9fa;">Dallas</p>
+                    <p style="color: #f8f9fa;">Texas</p>
+                    <p style="color: #f8f9fa;">75206</p>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="container mt-4 text-center" data-aos="fade-up" data-aos-delay="200">
+            <a href="https://www.linkedin.com/in/george-herter-7383441b6"
+                target="_blank"
+                class="social-btn linkedin-btn"
+                title="Connect with me on LinkedIn">
+                <img src="img/317725_linkedin_social_icon.png" alt="LinkedIn" class="social-icon">
+                Connect on LinkedIn
+            </a>
+            <a href="https://github.com/JorgeHerter"
+                target="_blank"
+                class="social-btn github-btn"
+                title="View my GitHub">
+                <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon">
+                View GitHub Profile
+            </a>
+        </div>
+
+        <div class="container mt-4 text-center" data-aos="fade-up" data-aos-delay="400">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#contactModal">Email Me</button>
+        </div>
+    </div> <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
