@@ -17,7 +17,10 @@ body {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+    /* Ensure scroll behavior is consistent for fixed backgrounds on elements like body::before */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
 }
 
 /* Common text color for pages with dark backgrounds (e.g., index, espanol) */
@@ -33,7 +36,7 @@ body.work, body.about {
 
 .navbar {
     z-index: 1050;
-    position: relative;
+    position: relative; /* Ensure navbar stays above main content */
 }
 
 /* ========== Layout Utility ========== */
@@ -44,11 +47,14 @@ body.work, body.about {
     justify-content: center;
     padding: 70px 15px 20px; /* Added horizontal padding for mobile */
     word-wrap: break-word; /* Ensure long words break on mobile */
+    flex-direction: column; /* Ensure content stacks vertically on smaller screens */
+    text-align: center; /* Center text within the wrapper */
 }
 
 /* Standard row margin for consistent spacing between rows */
 .row {
     margin-bottom: 20px;
+    width: 100%; /* Ensure rows take full width within wrapper */
 }
 
 /* Column styling for centering content within */
@@ -56,20 +62,24 @@ body.work, body.about {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Center items within the column */
+    width: 100%; /* Ensure column takes full width on smaller screens */
 }
 
 /* ========== Page Specific Backgrounds ========== */
+
+/* GLOBAL ::before for ALL background images */
 body::before {
     content: '';
-    position: fixed;
+    position: fixed; /* Fixed to viewport */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw; /* Use viewport units for full width/height */
+    height: 100vh;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; /* Crucial for filling the screen */
     background-position: center center;
-    z-index: -1;
+    z-index: -3; /* Place it furthest back */
 }
 
 /* Specific background images for each page */
@@ -77,30 +87,53 @@ body.index::before {
     background-image: url('../img/trappers lake.svg');
 }
 
+/* CONTACT PAGE SPECIFIC BACKGROUND FIXES */
+/* The main background image for contact page */
 body.contact::before {
     background-image: url('../img/monumentvalley.svg');
-    background-color: rgba(0, 0, 0, 0.3);
+    /* Ensure no background-color here, as ::after will handle the overlay */
 }
 
-/* Specific filter layer for the contact page background */
+/* Specific filter/overlay layer for the contact page background */
 body.contact::after {
     content: '';
-    position: fixed;
+    position: fixed; /* Fixed to viewport */
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: inherit;
-    background-attachment: fixed;
-    filter: contrast(150%) brightness(110%);
-    z-index: -2;
+    width: 100vw; /* Use viewport units for full width/height */
+    height: 100vh;
+    /* Apply a semi-transparent black overlay for the desired "darkness" */
+    background-color: rgba(0, 0, 0, 0.3); /* Base overlay color */
+    filter: contrast(150%) brightness(110%); /* Apply filters to this overlay */
+    z-index: -2; /* Just above the image, but still behind content */
 }
+
+/* Mobile-specific adjustments for all fixed backgrounds */
+@media (max-width: 767px) { /* Using 767px to catch all smaller screens */
+    /* Ensure backgrounds scroll with content on mobile for better compatibility */
+    body::before,
+    body.contact::after {
+        position: absolute; /* Change to absolute to scroll with content */
+        height: 100%; /* Fill the height of the body, which extends with content */
+        width: 100%; /* Fill the width of the body */
+        background-attachment: scroll; /* Explicitly set to scroll on mobile */
+    }
+
+    /* Specific adjustment for the 'espanol' page background on mobile */
+    body.espanol::before {
+        background-size: contain; /* Use contain for espanol if needed to show entire image */
+        background-position: top center;
+    }
+}
+
 
 /* ========== Typography - Mobile First Approach ========== */
 /* Base font size for the main heading - mobile first */
 .main-page-title {
     font-size: 1.75rem; /* Start small for mobile */
-    white-space: normal; /* ALLOW TEXT WRAPPING - this was your main issue */
+    white-space: normal; /* ALLOW TEXT WRAPPING */
     overflow: visible; /* Don't hide overflowing content */
     text-overflow: clip; /* Don't add ellipsis */
     word-wrap: break-word; /* Break long words if needed */
@@ -109,6 +142,7 @@ body.contact::after {
     line-height: 1.2; /* Tighter line height for mobile */
     margin: 0 auto; /* Center the title */
     max-width: 100%; /* Ensure it doesn't exceed container */
+    padding: 0 10px; /* Add slight horizontal padding */
 }
 
 /* ========== Text Effects ========== */
@@ -138,6 +172,7 @@ body.contact::after {
     font-family: 'Georgia', serif;
     margin: 0 10px; /* Add horizontal margin for mobile */
     max-width: 100%; /* Ensure cards don't exceed screen width */
+    flex-shrink: 0; /* Prevent card from shrinking too much */
 }
 
 .card.mb-4::before,
@@ -384,26 +419,16 @@ body.contact::after {
     }
 }
 
-/* Mobile-specific adjustments */
+/* Mobile-specific adjustments (max-width: 767px is generally good for most mobiles) */
 @media (max-width: 767px) {
-    /* Ensure backgrounds scroll with content on mobile */
-    body::before,
-    body.contact::after {
-        position: absolute;
-    }
-
-    /* Specific adjustment for the 'espanol' page background on mobile */
-    body.espanol::before {
-        background-size: contain;
-        background-position: top center;
-    }
-
-    /* Ensure all text elements can wrap */
+    /* Ensure all text elements can wrap and handle overflows */
     h1, h2, h3, h4, h5, h6,
     .display-1, .display-2, .display-3, .display-4 {
         word-wrap: break-word;
         hyphens: auto;
         white-space: normal;
+        text-align: center; /* Center headings on mobile */
+        padding: 0 10px; /* Add some horizontal padding */
     }
     
     /* Adjust display headings for mobile */
@@ -411,7 +436,7 @@ body.contact::after {
         font-size: 2rem;
     }
     
-    /* Add padding to prevent content from touching screen edges */
+    /* Add padding to prevent content from touching screen edges for containers */
     .container, .container-fluid {
         padding-left: 15px;
         padding-right: 15px;
