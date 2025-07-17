@@ -45,38 +45,46 @@
     </nav>
 
     <div class="main-content-wrapper">
-        <div class="container mt-5 text-center" data-aos="fade-right">
-            <h1 style="color: #f8f9fa;">Contact Info</h1>
-            <div>
-                <h2 style="color: #f8f9fa;">George Herter</h2>
-                <p style="color: #f8f9fa;">Full Stack Developer</p>
-                <p style="color: #f8f9fa;">Dallas</p>
-                <p style="color: #f8f9fa;">Texas</p>
-                <p style="color: #f8f9fa;">75206</p>
-            </div>
-        </div>
+       <div class="contact-card-wrapper container text-center" data-aos="fade-in">
+    <!-- Contact Info Section -->
+    <h1 class="contact-heading">Contact Info</h1>
+    <div class="contact-details mb-4"> <!-- Added mb-4 for spacing before buttons -->
+        <h2 class="contact-name">George Herter</h2>
+        <p class="contact-text">Full Stack Developer</p>
+        <p class="contact-text">Dallas</p>
+        <p class="contact-text">Texas</p>
+        <p class="contact-text">75206</p>
+    </div>
 
-        <div class="container mt-4 text-center" data-aos="fade-up" data-aos-delay="200">
-            <a href="https://www.linkedin.com/in/george-herter-7383441b6"
-                target="_blank"
-                class="social-btn linkedin-btn"
-                title="Connect with me on LinkedIn">
-                <img src="img/317725_linkedin_social_icon.png" alt="LinkedIn" class="social-icon">
-                Connect on LinkedIn
-            </a>
+    <!-- Social Buttons Section -->
+    <div class="social-buttons-group d-flex flex-wrap justify-content-center">
+        <a href="https://www.linkedin.com/in/george-herter-7383441b6"
+            target="_blank"
+            class="social-btn linkedin-btn"
+            title="Connect with me on LinkedIn">
+            <img src="img/317725_linkedin_social_icon.png" alt="LinkedIn" class="social-icon">
+            Connect on LinkedIn
+        </a>
 
-            <a href="https://github.com/JorgeHerter"
-                target="_blank"
-                class="social-btn github-btn"
-                title="View my GitHub">
-                <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon">
-                View GitHub Profile
-            </a>
-        </div>
-
-        <div class="container mt-4 text-center" data-aos="fade-up" data-aos-delay="400">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#contactModal">Email Me</button>
-        </div>
+        <a href="https://github.com/JorgeHerter"
+            target="_blank"
+            class="social-btn github-btn"
+            title="View my GitHub">
+            <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon">
+            View GitHub Profile
+        </a>
+        
+        <!-- Email Me button - now forced to new line with w-100 and mt-2 for spacing -->
+        <a href="#"
+            class="social-btn email-social-btn w-100 mt-2"
+            data-toggle="modal"
+            data-target="#contactModal"
+            title="Email me">
+            <i class="fas fa-envelope social-icon"></i> <!-- Font Awesome icon for email -->
+            Email Me
+        </a>
+    </div>
+</div>
 
     </div> <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

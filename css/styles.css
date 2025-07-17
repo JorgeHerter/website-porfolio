@@ -1,7 +1,34 @@
+/* CSS Variables for easier theme management */
+:root {
+    --primary-color: #007bff; /* Bootstrap primary blue */
+    --secondary-color: #6c757d; /* Bootstrap secondary grey */
+    --dark-bg-color: #343a40; /* Bootstrap dark navbar background */
+    --light-text-color: #f8f9fa; /* Bootstrap light text color */
+    --dark-text-color: #212529; /* Bootstrap dark text color */
+    --accent-color-vaudeville-border: #8b4513; /* Vaudeville border color */
+    --accent-color-vaudeville-text: #4b2e1e; /* Vaudeville text color */
+    --vaudeville-gradient-start: #f8f1e4;
+    --vaudeville-gradient-end: #e5d3b3;
+
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.3);
+    --shadow-strong: rgba(0, 0, 0, 0.5);
+
+    --border-radius-sm: 5px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 15px;
+
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+}
+
 /* ========== Global & Base Styles ========== */
 /* Universal font and consistent box model across all elements */
 body, html {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Keep Arial as specified, or consider a modern sans-serif like 'Inter' */
     box-sizing: border-box;
 }
 
@@ -18,25 +45,31 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scrollbars */
-    /* Ensure scroll behavior is consistent for fixed backgrounds on elements like body::before */
-    overflow-y: auto;
+    overflow-y: auto; /* Ensure scroll behavior is consistent */
     -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    padding-bottom: 60px; /* Space for the fixed footer */
+    perspective: 1000px; /* Establish 3D perspective for the body's children */
 }
 
 /* Common text color for pages with dark backgrounds (e.g., index, espanol) */
 body.index, body.espanol {
-    color: whitesmoke;
+    color: var(--light-text-color);
 }
 
 /* Specific background colors for non-image pages (e.g., work, about) */
 body.work, body.about {
-    background-color: bisque;
+    background-color: bisque; /* Retained original color */
     color: initial;
 }
 
 .navbar {
     z-index: 1050;
     position: relative; /* Ensure navbar stays above main content */
+    /* Added transparency to the navbar background */
+    background-color: rgba(52, 58, 64, 0.8) !important; /* Use rgba for transparency, !important to override Bootstrap's bg-dark */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+    transition: background-color 0.3s ease; /* Smooth transition for background changes */
 }
 
 /* ========== Layout Utility ========== */
@@ -45,16 +78,25 @@ body.work, body.about {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 70px 15px 20px; /* Added horizontal padding for mobile */
-    word-wrap: break-word; /* Ensure long words break on mobile */
-    flex-direction: column; /* Ensure content stacks vertically on smaller screens */
-    text-align: center; /* Center text within the wrapper */
+    padding-top: 56px; /* Adjusted based on fixed navbar height */
+    padding-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    word-wrap: break-word;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Styles for specific class combination */
+.text-light.text-center.d-flex.align-items-center {
+    min-height: auto;
+    margin-bottom: 0;
 }
 
 /* Standard row margin for consistent spacing between rows */
 .row {
-    margin-bottom: 20px;
-    width: 100%; /* Ensure rows take full width within wrapper */
+    margin-bottom: var(--spacing-lg);
+    width: 100%;
 }
 
 /* Column styling for centering content within */
@@ -62,8 +104,8 @@ body.work, body.about {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center items within the column */
-    width: 100%; /* Ensure column takes full width on smaller screens */
+    align-items: center;
+    width: 100%;
 }
 
 /* ========== Page Specific Backgrounds ========== */
@@ -71,15 +113,20 @@ body.work, body.about {
 /* GLOBAL ::before for ALL background images */
 body::before {
     content: '';
-    position: fixed; /* Fixed to viewport */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Use viewport units for full width/height */
+    width: 100vw;
     height: 100vh;
     background-repeat: no-repeat;
-    background-size: cover; /* Crucial for filling the screen */
+    background-size: cover;
     background-position: center center;
-    z-index: -3; /* Place it furthest back */
+    z-index: -3;
+    /* Added filter for background depth */
+    filter: brightness(0.7) contrast(1.2) blur(1px); /* Slightly darken, increase contrast, and add a subtle blur */
+    transition: filter 0.5s ease, transform 0.5s ease; /* Smooth transition for transform */
+    /* 3D Transform for depth - Increased scale to ensure fill */
+    transform: translateZ(-100px) rotateX(2deg) rotateY(-2deg) scale(1.15); /* Push back, subtle tilt, and slightly scale up to fill view */
 }
 
 /* Specific background images for each page */
@@ -91,40 +138,47 @@ body.index::before {
 /* The main background image for contact page */
 body.contact::before {
     background-image: url('../img/monumentvalley.svg');
-    /* Ensure no background-color here, as ::after will handle the overlay */
+    background-size: cover; /* Ensure it covers the screen explicitly */
+    background-position: center center; /* Ensure it's centered */
 }
 
 /* Specific filter/overlay layer for the contact page background */
 body.contact::after {
     content: '';
-    position: fixed; /* Fixed to viewport */
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    width: 100vw; /* Use viewport units for full width/height */
+    width: 100vw;
     height: 100vh;
-    /* Apply a semi-transparent black overlay for the desired "darkness" */
-    background-color: rgba(0, 0, 0, 0.3); /* Base overlay color */
-    filter: contrast(150%) brightness(110%); /* Apply filters to this overlay */
-    z-index: -2; /* Just above the image, but still behind content */
+    background-color: rgba(0, 0, 0, 0.3);
+    filter: contrast(150%) brightness(110%);
+    z-index: -2;
 }
 
 /* Mobile-specific adjustments for all fixed backgrounds */
-@media (max-width: 767px) { /* Using 767px to catch all smaller screens */
-    /* Ensure backgrounds scroll with content on mobile for better compatibility */
+@media (max-width: 767px) {
     body::before,
     body.contact::after {
         position: absolute; /* Change to absolute to scroll with content */
-        height: 100%; /* Fill the height of the body, which extends with content */
+        height: 100vh; /* Explicitly set to viewport height on mobile */
         width: 100%; /* Fill the width of the body */
         background-attachment: scroll; /* Explicitly set to scroll on mobile */
+        transform: none; /* Remove 3D transform on mobile for better performance/compatibility */
+        filter: brightness(0.8) contrast(1.1); /* Reset filter for mobile */
     }
 
     /* Specific adjustment for the 'espanol' page background on mobile */
     body.espanol::before {
-        background-size: contain; /* Use contain for espanol if needed to show entire image */
+        background-size: contain;
         background-position: top center;
+    }
+
+    /* Explicitly ensure contact page background covers on mobile */
+    body.contact::before {
+        background-size: cover; /* Ensure it covers the mobile screen */
+        background-position: center center;
     }
 }
 
@@ -132,18 +186,25 @@ body.contact::after {
 /* ========== Typography - Mobile First Approach ========== */
 /* Base font size for the main heading - mobile first */
 .main-page-title {
-    font-size: 1.75rem; /* Start small for mobile */
-    white-space: normal; /* ALLOW TEXT WRAPPING */
-    overflow: visible; /* Don't hide overflowing content */
-    text-overflow: clip; /* Don't add ellipsis */
-    word-wrap: break-word; /* Break long words if needed */
-    hyphens: auto; /* Add hyphens for better breaking */
-    text-align: center; /* Center align for better mobile appearance */
-    line-height: 1.2; /* Tighter line height for mobile */
-    margin: 0 auto; /* Center the title */
-    max-width: 100%; /* Ensure it doesn't exceed container */
-    padding: 0 10px; /* Add slight horizontal padding */
+    font-size: 1.75rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-wrap: break-word;
+    hyphens: auto;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 var(--spacing-sm);
+    text-shadow: 2px 2px 4px var(--shadow-medium); /* Use variable for shadow */
 }
+
+/* Added text shadow for lead paragraph */
+.lead {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Retained specific RGBA for lead */
+}
+
 
 /* ========== Text Effects ========== */
 @keyframes flashText {
@@ -163,16 +224,16 @@ body.contact::after {
 
 /* ========== Card Styles (Vaudeville Look) ========== */
 .card.mb-4 {
-    border: 8px double #8b4513;
-    background: linear-gradient(to bottom right, #f8f1e4, #e5d3b3);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
+    border: 8px double var(--accent-color-vaudeville-border);
+    background: linear-gradient(to bottom right, var(--vaudeville-gradient-start), var(--vaudeville-gradient-end));
+    box-shadow: 0 12px 24px var(--shadow-medium);
+    border-radius: var(--border-radius-lg);
     padding: 1rem;
     position: relative;
     font-family: 'Georgia', serif;
-    margin: 0 10px; /* Add horizontal margin for mobile */
-    max-width: 100%; /* Ensure cards don't exceed screen width */
-    flex-shrink: 0; /* Prevent card from shrinking too much */
+    margin: 0 var(--spacing-sm);
+    max-width: 100%;
+    flex-shrink: 0;
 }
 
 .card.mb-4::before,
@@ -198,67 +259,67 @@ body.contact::after {
 }
 
 .card.mb-4 .card-title {
-    font-size: 1.5rem; /* Smaller for mobile */
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #4b2e1e;
+    color: var(--accent-color-vaudeville-text);
     text-shadow: 1px 1px 1px #fff;
-    border-bottom: 2px dashed #8b4513;
+    border-bottom: 2px dashed var(--accent-color-vaudeville-border);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
-    word-wrap: break-word; /* Ensure titles wrap */
+    word-wrap: break-word;
 }
 
 .card.mb-4 .card-text {
-    color: #3a2c1a;
-    font-size: 1rem; /* Slightly smaller for mobile */
+    color: #3a2c1a; /* Retained specific color */
+    font-size: 1rem;
     line-height: 1.6;
-    word-wrap: break-word; /* Ensure text wraps */
+    word-wrap: break-word;
 }
 
 .card.mb-4 img {
-    border: 3px solid #8b4513;
-    border-radius: 10px;
+    border: 3px solid var(--accent-color-vaudeville-border);
+    border-radius: var(--border-radius-sm);
     margin-top: 1rem;
     max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
 }
 
 /* ========== Contact Form Styles ========== */
 .contact-form {
-    max-width: 95%; /* More space on mobile */
-    margin: 20px auto;
-    padding: 15px; /* Smaller padding on mobile */
+    max-width: 95%;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-md);
     background-color: #ffffff;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 4px var(--shadow-light);
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 4px; /* Retained specific border-radius for inputs */
     box-sizing: border-box;
-    font-size: 16px; /* Prevents zoom on iOS */
+    font-size: 16px;
 }
 
 .contact-form button {
     width: 100%;
-    padding: 12px 20px; /* Slightly larger touch target */
-    background-color: #4CAF50;
+    padding: 12px 20px;
+    background-color: #4CAF50; /* Retained specific color for success button */
     color: white;
     font-size: 16px;
     border: none;
-    border-radius: 4px;
+    border-radius: 4px; /* Retained specific border-radius for buttons */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Retained specific color for success button hover */
 }
 
 /* ========== Modal Styles ========== */
@@ -266,66 +327,66 @@ body.contact::after {
     display: flex;
     align-items: center;
     min-height: calc(100% - 1rem);
-    margin: 0.5rem; /* Add margin for mobile */
+    margin: 0.5rem;
 }
 
 @media (min-width: 576px) {
     .modal-dialog {
         min-height: calc(100% - 3.5rem);
-        margin: 1.75rem auto; /* Reset margin for larger screens */
+        margin: 1.75rem auto;
     }
 }
 
 #statusModal .modal-content {
     border-left: 5px solid;
-    background-color: #FFE4C4;
+    background-color: #FFE4C4; /* Retained specific color */
 }
 
 #statusModal .modal-header,
 #statusModal .modal-footer {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
 }
 
 #statusModal .modal-body {
-    background-color: #FFE4C4;
+    background-color: #FFE4C4; /* Retained specific color */
 }
 
 #statusModal.success .modal-content {
-    border-left-color: #28a745;
+    border-left-color: #28a745; /* Retained specific color */
 }
 
 #statusModal.error .modal-content {
-    border-left-color: #dc3545;
+    border-left-color: #dc3545; /* Retained specific color */
 }
 
 #statusModal.sending .modal-content {
-    border-left-color: #17a2b8;
+    border-left-color: #17a2b8; /* Retained specific color */
 }
 
 .status-message {
-    padding: 10px;
-    border-radius: 5px;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: var(--spacing-sm);
 }
 
 .status-message.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background-color: #d4edda; /* Retained specific color */
+    color: #155724; /* Retained specific color */
+    border: 1px solid #c3e6cb; /* Retained specific color */
 }
 
 .status-message.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background-color: #f8d7da; /* Retained specific color */
+    color: #721c24; /* Retained specific color */
+    border: 1px solid #f5c6cb; /* Retained specific color */
 }
 
 .status-message.sending {
-    background-color: #cce5ff;
-    color: #004085;
-    border: 1px solid #b8daff;
+    background-color: #cce5ff; /* Retained specific color */
+    color: #004085; /* Retained specific color */
+    border: 1px solid #b8daff; /* Retained specific color */
 }
 
 /* ========== Social Buttons ========== */
@@ -333,14 +394,27 @@ body.contact::after {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 16px; /* Larger touch target for mobile */
+    padding: var(--spacing-sm) 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius-sm);
     font-weight: 500;
     text-decoration: none;
-    margin: 5px;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-    min-height: 44px; /* Minimum touch target size */
+    margin: var(--spacing-xs); /* 5px margin all around */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Added transform and box-shadow to transition */
+    min-height: 44px; /* Ensure minimum touch target size */
+    height: 44px; /* Explicit height for consistency */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle initial shadow */
+    box-sizing: border-box; /* Ensure padding is included in height */
+}
+
+.social-btn:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.social-btn:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); /* Reduced shadow on active */
 }
 
 .github-btn {
@@ -361,12 +435,24 @@ body.contact::after {
     background-color: #005983;
 }
 
+.email-social-btn { /* New class for the email button's specific styling */
+    background-color: var(--primary-color); /* Use primary color for email button */
+    color: white;
+    /* Ensure the email button's width is consistent with others if not forced to 100% */
+    /* If w-100 is used in HTML, this max-width ensures it doesn't stretch too much on large screens */
+    max-width: 250px; /* Example max-width, adjust as needed */
+}
+
+.email-social-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
 .social-icon {
     width: 24px;
     height: 24px;
     margin-right: 8px;
-    vertical-align: middle;
-    filter: brightness(0) invert(1);
+    /* Ensure consistent icon color regardless of source (SVG or Font Awesome) */
+    filter: brightness(0) invert(1); /* Makes icons white */
 }
 
 /* ========== Responsive Breakpoints ========== */
@@ -375,14 +461,14 @@ body.contact::after {
     .main-page-title {
         font-size: 2.25rem;
     }
-    
+
     .card.mb-4 .card-title {
         font-size: 1.6rem;
     }
-    
+
     .contact-form {
         max-width: 400px;
-        padding: 20px;
+        padding: var(--spacing-lg);
     }
 }
 
@@ -391,17 +477,17 @@ body.contact::after {
     .main-page-title {
         font-size: 2.75rem;
     }
-    
+
     .card.mb-4 .card-title {
         font-size: 1.75rem;
     }
-    
+
     .card.mb-4 .card-text {
         font-size: 1.1rem;
     }
-    
+
     .main-content-wrapper {
-        padding: 70px 30px 20px;
+        padding: 70px var(--spacing-xl) var(--spacing-lg);
     }
 }
 
@@ -428,17 +514,216 @@ body.contact::after {
         hyphens: auto;
         white-space: normal;
         text-align: center; /* Center headings on mobile */
-        padding: 0 10px; /* Add some horizontal padding */
+        padding: 0 var(--spacing-sm);
     }
-    
+
     /* Adjust display headings for mobile */
     .display-3 {
         font-size: 2rem;
     }
-    
+
     /* Add padding to prevent content from touching screen edges for containers */
     .container, .container-fluid {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+}
+
+/* ========== Depth and 3D Effects ========== */
+
+/* Add depth to the profile image */
+.img-fluid.rounded-circle {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 6px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-fluid.rounded-circle:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* Add depth to the main content container */
+.main-content-wrapper .container {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle transparent background */
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl); /* Increased padding for better visual spacing */
+    box-shadow: 0 15px 30px var(--shadow-strong), 0 10px 10px var(--shadow-medium);
+    backdrop-filter: blur(5px); /* Add a subtle blur effect behind the content */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+    transform-style: preserve-3d; /* Enable 3D transformations for children */
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg); /* Initial 3D context */
+    transition: transform 0.5s ease-out;
+}
+
+/* Optional: Subtle tilt on hover for the container */
+.main-content-wrapper .container:hover {
+    transform: perspective(1000px) rotateX(1deg) rotateY(1deg);
+}
+
+/* Add depth to buttons */
+.btn {
+    box-shadow: 0 5px 10px var(--shadow-medium);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== Fixed Footer Styles ========== */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--dark-bg-color); /* Dark background for the footer */
+    color: var(--light-text-color); /* Light text for readability */
+    text-align: center;
+    padding: var(--spacing-md) 0; /* Vertical padding */
+    font-size: 0.9rem;
+    z-index: 1000; /* Ensure it stays above other content but below navbar */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow at the top edge */
+}
+
+/* Adjust body padding for mobile if footer takes up more space */
+@media (max-width: 767px) {
+    body {
+        padding-bottom: 70px; /* Increase padding if footer is taller on mobile */
+    }
+}
+
+/* ========== New Depth Effects for Work/Section Intro ========== */
+
+/* Container for the introductory text on the work page/sections */
+.intro-section-container {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle transparent background */
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl); /* Generous padding */
+    box-shadow: 0 15px 30px var(--shadow-strong), 0 10px 10px var(--shadow-medium);
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+    transform-style: preserve-3d; /* Enable 3D transformations for children */
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg); /* Initial 3D context */
+    transition: transform 0.5s ease-out;
+    margin-top: var(--spacing-xl); /* Add margin from top */
+    margin-bottom: var(--spacing-xl); /* Add margin from bottom */
+    width: 100%; /* Ensure it takes full width */
+    max-width: 800px; /* Limit max width for better readability on large screens */
+}
+
+/* Optional: Subtle tilt on hover for the intro container */
+.intro-section-container:hover {
+    transform: perspective(1000px) rotateX(1deg) rotateY(1deg);
+}
+
+/* Heading for the section (e.g., "Here are Some Examples of my Work") */
+.section-heading {
+    font-size: 2.5rem; /* Adjust font size as needed */
+    font-weight: bold;
+    color: var(--dark-text-color); /* Changed to dark text color */
+    text-shadow: 2px 2px 4px var(--shadow-medium); /* Add text shadow for depth */
+    margin-bottom: var(--spacing-sm); /* Space below heading */
+    text-align: center; /* Ensure it's centered */
+}
+
+/* Descriptive paragraph for the section */
+.section-description {
+    font-size: 1.1rem; /* Adjust font size as needed */
+    color: var(--dark-text-color); /* Changed to dark text color */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Add text shadow for depth */
+    margin-bottom: var(--spacing-lg); /* Space below paragraph */
+    text-align: center; /* Ensure it's centered */
+}
+
+/* Media query for mobile adjustments for new elements */
+@media (max-width: 767px) {
+    .intro-section-container {
+        padding: var(--spacing-lg); /* Reduce padding on mobile */
+        margin-top: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .section-heading {
+        font-size: 1.8rem; /* Adjust font size for mobile */
+    }
+
+    .section-description {
+        font-size: 1rem; /* Adjust font size for mobile */
+    }
+}
+
+/* ========== Contact Card Wrapper Styles ========== */
+.contact-card-wrapper {
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly more opaque for better contrast */
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl); /* Generous padding around content */
+    box-shadow: 0 15px 30px var(--shadow-strong), 0 10px 10px var(--shadow-medium);
+    backdrop-filter: blur(8px); /* Increased blur for more frosted effect */
+    -webkit-backdrop-filter: blur(8px); /* For Safari */
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    transition: transform 0.5s ease-out, background-color 0.3s ease;
+    margin-top: var(--spacing-xl); /* Margin from top of page/previous content */
+    margin-bottom: var(--spacing-xl); /* Margin from bottom/next content */
+    width: 100%;
+    max-width: 500px; /* Limit max width for a tighter wrap on larger screens */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for definition */
+    color: var(--light-text-color); /* Set default text color for the wrapper to whitesmoke */
+}
+
+.contact-card-wrapper:hover {
+    transform: perspective(1000px) rotateX(1deg) rotateY(1deg);
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
+}
+
+.contact-card-wrapper .contact-heading {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--light-text-color); /* Changed to light text color (whitesmoke) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-card-wrapper .contact-details h2,
+.contact-card-wrapper .contact-details p {
+    color: var(--light-text-color); /* Changed to light text color (whitesmoke) */
+    margin-bottom: var(--spacing-xs); /* Tighter spacing for contact lines */
+}
+
+.contact-card-wrapper .contact-details h2 {
+    font-size: 1.8rem;
+    margin-top: 0; /* Remove default h2 top margin */
+}
+
+.contact-card-wrapper .contact-details p {
+    font-size: 1rem;
+}
+
+/* Adjust social buttons group within the contact card */
+.contact-card-wrapper .social-buttons-group {
+    margin-top: var(--spacing-lg); /* Space between contact info and buttons */
+    width: 100%; /* Ensure the button group takes full width within the card */
+}
+
+/* Mobile adjustments for contact card */
+@media (max-width: 767px) {
+    .contact-card-wrapper {
+        padding: var(--spacing-lg); /* Reduce padding on mobile */
+        margin-top: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+        max-width: 95%; /* Adjust max width for mobile */
+    }
+
+    .contact-card-wrapper .contact-heading {
+        font-size: 1.8rem;
+    }
+
+    .contact-card-wrapper .contact-details h2 {
+        font-size: 1.5rem;
     }
 }
