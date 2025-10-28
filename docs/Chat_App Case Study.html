@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: ChatApp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f7fafc;
+      color: #1a202c;
+    }
+    .container {
+      max-width: 800px;
+    }
+    img {
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    /* Simple animation for hover effects */
+    .nav-link:hover {
+        transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body class="work bg-gray-100">
+  <!-- Navigation Bar -->
+  <nav class="bg-gray-800 p-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <a class="text-xl md:text-2xl font-bold text-white tracking-wide" href="#">Portfolio Website</a>
+      <div class="flex items-center space-x-4 md:space-x-8">
+        <a class="nav-link text-white text-sm md:text-base opacity-75 hover:opacity-100 transition duration-300 transform" href="#">Home</a>
+        <a class="nav-link text-white text-sm md:text-base opacity-75 hover:opacity-100 transition duration-300 transform" href="#">Contact</a>
+        <a class="nav-link text-white text-sm md:text-base opacity-75 hover:opacity-100 transition duration-300 transform" href="#">Back to Work Examples</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <div class="container mx-auto mt-8 p-4 bg-white rounded-lg shadow-xl">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-800 mb-8 tracking-tighter">
+      Case Study: ChatApp
+    </h1>
+
+    <!-- Overview Section -->
+    <section id="overview" class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-gray-300 pb-2">Overview</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        ChatApp is a modern, cross-platform mobile chat application built with React Native and Expo. It showcases a seamless messaging experience, allowing users to communicate via text, share images, and send their live location. This project serves as a portfolio piece to demonstrate robust mobile development skills and the power of a unified codebase for both iOS and Android.
+      </p>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="the-issue" class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-gray-300 pb-2">The Problem</h2>
+      <ul class="list-disc list-inside space-y-2 text-lg text-gray-600">
+        <li>Building native mobile applications traditionally required separate codebases for iOS and Android, which was costly and time-consuming.</li>
+        <li>A solution was needed that could provide a high-quality native experience with a single codebase.</li>
+        <li>A need for a project to demonstrate proficiency in real-time communication and data persistence.</li>
+      </ul>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="the-solution" class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-gray-300 pb-2">The Solution: ChatApp</h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-4">
+        ChatApp leverages the power of React Native to create a single codebase for a feature-rich, cross-platform application. It integrates with Google Firebase for real-time data storage and authentication, ensuring a fast and reliable messaging experience. Users can start chatting immediately with anonymous sign-in and stay connected even when offline.
+      </p>
+      <div class="flex justify-center mb-4">
+        <img src="https://placehold.co/600x400/8A95A5/FFFFFF?text=Start+Screen" alt="ChatApp Start Screen" class="w-full md:w-3/4 lg:w-2/3"/>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-gray-300 pb-2">Key Features</h2>
+      <ul class="list-disc list-inside space-y-2 text-lg text-gray-600">
+        <li>🔐 **Anonymous Authentication**: Users can log in instantly without creating an account.</li>
+        <li>💬 **Real-time Text Messaging**: Seamlessly exchange messages with friends and family.</li>
+        <li>🖼️ **Image Sharing**: Send images directly from the device's photo library or camera.</li>
+        <div class="flex justify-center my-4">
+          <img src="https://placehold.co/600x400/B9C6AE/000000?text=Chat+Interface" alt="ChatApp Main Interface" class="w-full md:w-3/4 lg:w-2/3"/>
+        </div>
+        <li>🗺️ **Location Sharing**: Share your current location, which is displayed in a map view within the chat.</li>
+        <div class="flex justify-center my-4">
+          <img src="https://placehold.co/600x400/474056/FFFFFF?text=Map+View" alt="ChatApp Map View" class="w-full md:w-3/4 lg:w-2/3"/>
+        </div>
+        <li>✈️ **Offline Reading**: Access cached messages even without an internet connection.</li>
+        <li>🗣️ **Accessibility**: Designed to be compatible with screen readers for visually impaired users.</li>
+      </ul>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech-stack" class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-gray-300 pb-2">Tech Stack</h2>
+      <p class="text-lg text-gray-600">
+        <strong>Framework:</strong> React Native, Expo<br/>
+        <strong>Backend:</strong> Google Firebase (Firestore, Authentication, Cloud Storage)<br/>
+        <strong>Libraries:</strong> React Native Gifted Chat, AsyncStorage, React Navigation<br/>
+        <strong>Tools:</strong> JavaScript, Git
+      </p>
+    </section>
+
+    <!-- Development Highlights Section -->
+    <section id="development" class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-gray-300 pb-2">Development Highlights</h2>
+      <ul class="list-disc list-inside space-y-2 text-lg text-gray-600">
+        <li>**Unified Codebase**: Leveraged React Native to build for both iOS and Android from a single project.</li>
+        <li>**Real-Time Data**: Implemented real-time messaging using Firebase Firestore, ensuring instant message delivery.</li>
+        <li>**Data Persistence**: Utilized AsyncStorage for local storage, providing a robust offline experience.</li>
+        <li>**Rich Media Integration**: Integrated the device's camera and photo library for sending images, and map views for displaying locations.</li>
+      </ul>
+    </section>
+
+    <!-- Scenarios Section -->
+    <section id="scenarios" class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-gray-300 pb-2">Feature Scenarios (BDD-style)</h2>
+      <p class="text-lg text-gray-600 mb-2">**Feature 1**: Real-time Messaging</p>
+      <ul class="list-disc list-inside space-y-2 text-lg text-gray-600 mb-4">
+        <li>**Scenario 1**: User opens the app and enters a name.</li>
+        <li>**Scenario 2**: User types a message and sends it.</li>
+        <li>**Scenario 3**: The message appears instantly in the conversation for all participants.</li>
+      </ul>
+      <p class="text-lg text-gray-600 mb-2">**Feature 2**: Media Sharing</p>
+      <ul class="list-disc list-inside space-y-2 text-lg text-gray-600 mb-4">
+        <li>**Scenario 1**: User clicks an "add" button to access more options.</li>
+        <li>**Scenario 2**: User chooses to share an image from their library.</li>
+        <li>**Scenario 3**: The selected image is uploaded to Firebase Storage and displayed in the chat.</li>
+      </ul>
+      <p class="text-lg text-gray-600 mb-2">**Feature 3**: Offline Access</p>
+      <ul class="list-disc list-inside space-y-2 text-lg text-gray-600">
+        <li>**Scenario 1**: User loses internet connection while in a chat.</li>
+        <li>**Scenario 2**: User can still view all previously loaded messages.</li>
+        <li>**Scenario 3**: User can compose new messages, which will be sent once the connection is restored.</li>
+      </ul>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact-results" class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-gray-300 pb-2">Impact & Results</h2>
+      <ul class="list-disc list-inside space-y-2 text-lg text-gray-600">
+        <li>🎯 Successfully demonstrates the ability to build a fully functional, cross-platform mobile application.</li>
+        <li>📈 Proves the efficiency of using a single codebase for multiple platforms.</li>
+        <li>🚀 Highlights proficiency in integrating powerful cloud services for real-time communication.</li>
+      </ul>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion" class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-gray-300 pb-2">Conclusion</h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-2">
+        ChatApp is more than just a messaging application; it's a testament to the power and flexibility of React Native. By addressing core challenges in mobile development and incorporating key features like rich media sharing and offline access, the app provides a seamless and modern user experience.
+      </p>
+      <p class="text-lg text-gray-600 leading-relaxed">Future improvements could include user profiles, group chats, and read receipts.</p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-gray-500 text-sm">
+    <p>2024 ChatApp Case Study</p>
+  </footer>
+</body>
+</html>
