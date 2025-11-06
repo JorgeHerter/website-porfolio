@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Angular MyFlix Application</title>
+    <!-- Load Tailwind CSS from CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles and configuration for Tailwind */
+        :root {
+            --primary-color: #EF4444; /* Tailwind red-500 */
+            --secondary-color: #1F2937; /* Tailwind gray-800 */
+        }
+        
+        /* Ensure Inter is the default font */
+        html {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom utility for clean list styles in the content */
+        .content-list li {
+            padding-left: 1.5rem; /* Space for custom bullet */
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        .content-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        /* Custom card styling for visual hierarchy */
+        .detail-card {
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease-in-out;
+        }
+        .detail-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+    </style>
+    <!-- Add Inter font via Google Fonts (optional but good practice) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Navbar/Header - Simplified for a Case Study -->
+    <header class="bg-gray-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-tight">Angular MyFlix Case Study</h1>
+            <nav>
+                <a href="#overview" class="text-sm font-medium hover:text-red-400 transition duration-150 mx-2">Overview</a>
+                <a href="#features" class="text-sm font-medium hover:text-red-400 transition duration-150 mx-2">Features</a>
+                <a href="#tech" class="text-sm font-medium hover:text-red-400 transition duration-150 mx-2">Requirements</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-5xl">
+
+        <!-- Title Section -->
+        <div class="text-center mb-12">
+            <p class="text-sm font-semibold text-red-500 uppercase tracking-wider">Achievement 6 Project</p>
+            <h2 class="text-5xl font-extrabold text-gray-900 mt-2">Developing MyFlix: An Angular Single-Page Application</h2>
+            <p class="mt-4 text-xl text-gray-600">Bridging a RESTful API with a modern, responsive frontend.</p>
+        </div>
+
+        <!-- Section 1: Project Objective and Context -->
+        <section id="overview" class="mb-16 p-8 bg-white rounded-xl shadow-lg detail-card">
+            <h3 class="text-3xl font-bold text-gray-900 border-b-2 border-red-500 pb-2 mb-6">1. Project Objective & Context</h3>
+            
+            <div class="space-y-6">
+                <p class="text-lg">
+                    <span class="font-semibold text-gray-900">Objective:</span>
+                    To build the client-side for the existing myFlix server-side (REST API) using the Angular framework (v9+). The final product is a single-page, responsive application with multiple interface views for user authentication and movie data consumption.
+                </p>
+
+                <h4 class="text-2xl font-semibold text-gray-700 mt-8">Context: Agile Handoffs</h4>
+                <p class="text-gray-600 leading-relaxed">
+                    This project served as a crucial exercise in modern workplace collaboration and communication. By developing detailed documentation, user stories, story points, and a kanban board, the focus was placed not only on the technical implementation of the Angular app but also on the ability to create clear and indispensable handoffs for other developers and stakeholders. This demonstrates proficiency in Agile project management and technical communication, which are vital for remote and collaborative environments.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: The 5 W's (Project Definition) -->
+        <section class="mb-16 p-8 bg-white rounded-xl shadow-lg detail-card">
+            <h3 class="text-3xl font-bold text-gray-900 border-b-2 border-red-500 pb-2 mb-6">2. Project Definition (The 5 W's)</h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="text-red-500 font-bold text-xl">Who</p>
+                    <p class="text-gray-700">The users of the myFlix movie app, including movie enthusiasts, as well as other developers and designers interacting with the codebase.</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="text-red-500 font-bold text-xl">What</p>
+                    <p class="text-gray-700">A responsive, single-page movie app built with Angular. It features routing, multiple views, and handles data via a REST API. Accompanied by full documentation (JSDoc, Typedoc) and a kanban board.</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="text-red-500 font-bold text-xl">When & Where</p>
+                    <p class="text-gray-700">The app is hosted online, accessible anytime, anywhere, and on any device (responsive design).</p>
+                </div>
+                <div class="lg:col-span-3 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="text-red-500 font-bold text-xl">Why</p>
+                    <p class="text-gray-700">To provide movie enthusiasts with easy access to information (movies, directors, genres) and personalized features (favorite lists), while demonstrating strong command of the Angular framework and professional documentation skills to potential employers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Design Criteria & Key Features -->
+        <section id="features" class="mb-16 p-8 bg-white rounded-xl shadow-lg detail-card">
+            <h3 class="text-3xl font-bold text-gray-900 border-b-2 border-red-500 pb-2 mb-6">3. Design & Features</h3>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- User Stories -->
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-700 mb-4">User Stories</h4>
+                    <ul class="content-list space-y-3">
+                        <li>As a user, I want to be able to receive information on movies, directors, and genres so that I can learn more about movies I’ve watched or am interested in.</li>
+                        <li>As a user, I want to be able to create a profile so I can save data about my favorite movies.</li>
+                    </ul>
+                </div>
+                
+                <!-- Key Features -->
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-700 mb-4">Key Application Features</h4>
+                    <ul class="content-list space-y-3">
+                        <li>**Welcome View:** Landing page to handle user **Login** or **Registration**.</li>
+                        <li>**Movie View:** Displays a collection of all movies in a responsive card layout.</li>
+                        <li>**Single Movie View:** Displays granular details about a selected movie.</li>
+                        <li>**Director View:** Dedicated view accessible from a movie page, showing details about the movie's director.</li>
+                        <li>**Genre View:** Dedicated view accessible from a movie page, showing details about the movie's genre.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Technical Requirements & Stack -->
+        <section id="tech" class="mb-16 p-8 bg-gray-800 text-white rounded-xl shadow-2xl">
+            <h3 class="text-3xl font-bold text-red-400 border-b-2 border-red-400 pb-2 mb-6">4. Technical Stack & Requirements</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-200 mb-4">Core Technology</h4>
+                    <ul class="content-list space-y-3">
+                        <li class="before:text-red-400">**Framework:** Angular (version 9 or later).</li>
+                        <li class="before:text-red-400">**Language:** TypeScript (via Angular).</li>
+                        <li class="before:text-red-400">**Styling:** Angular Material (mandatory for design and UI components).</li>
+                        <li class="before:text-red-400">**API:** Connects to the existing myFlix REST API (from Achievement 2).</li>
+                        <li class="before:text-red-400">**Deployment:** Hosted on GitHub Pages.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-200 mb-4">Code Quality & Documentation</h4>
+                    <ul class="content-list space-y-3">
+                        <li class="before:text-red-400">**Code Comments:** Must use **Typedoc** style comments for all components and services.</li>
+                        <li class="before:text-red-400">**Technical Handoff:** Must contain comprehensive **JSDoc** style technical documentation.</li>
+                        <li class="before:text-red-400">**Project Management:** Utilized **Agile** techniques including a detailed **Kanban Board** with **User Stories** and **Story Points**.</li>
+                        <li class="before:text-red-400">**Dependencies:** Requires latest versions of Node.js and npm.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Project Deliverables Timeline -->
+        <section class="mb-16 p-8 bg-white rounded-xl shadow-lg detail-card">
+            <h3 class="text-3xl font-bold text-gray-900 border-b-2 border-red-500 pb-2 mb-6">5. Project Deliverables Timeline</h3>
+
+            <ol class="relative border-l border-gray-200 ml-4">                  
+                <li class="mb-10 ml-6">
+                    <span class="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -left-3 ring-8 ring-white">
+                        <svg class="w-2.5 h-2.5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <h4 class="mb-1 text-lg font-semibold text-gray-900">Exercise 1: Project Management</h4>
+                    <p class="text-sm text-gray-500">Kanban board setup, user flow creation, non-technical interview practice.</p>
+                </li>
+                <li class="mb-10 ml-6">
+                    <span class="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -left-3 ring-8 ring-white">
+                        <svg class="w-2.5 h-2.5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <h4 class="mb-1 text-lg font-semibold text-gray-900">Exercise 2: Angular Introduction</h4>
+                    <p class="text-sm text-gray-500">Angular CLI app creation, technical interview preparation.</p>
+                </li>
+                <li class="mb-10 ml-6">
+                    <span class="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -left-3 ring-8 ring-white">
+                        <svg class="w-2.5 h-2.5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <h4 class="mb-1 text-lg font-semibold text-gray-900">Exercise 3: Forms & Material</h4>
+                    <p class="text-sm text-gray-500">Implementation of user registration and login forms using Angular Material components.</p>
+                </li>
+                <li class="mb-10 ml-6">
+                    <span class="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -left-3 ring-8 ring-white">
+                        <svg class="w-2.5 h-2.5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <h4 class="mb-1 text-lg font-semibold text-gray-900">Exercise 4: Core Views & Routing</h4>
+                    <p class="text-sm text-gray-500">Implementation of movie card component and defining the application's core routing structure.</p>
+                </li>
+                <li class="mb-10 ml-6">
+                    <span class="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -left-3 ring-8 ring-white">
+                        <svg class="w-2.5 h-2.5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <h4 class="mb-1 text-lg font-semibold text-gray-900">Exercise 5: Documentation & Handoffs</h4>
+                    <p class="text-sm text-gray-500">Codebase commenting (Typedoc), preparing technical documentation (JSDoc), and finalizing the kanban board.</p>
+                </li>
+                <li class="mb-10 ml-6">
+                    <span class="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -left-3 ring-8 ring-white">
+                        <svg class="w-2.5 h-2.5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <h4 class="mb-1 text-lg font-semibold text-gray-900">Exercise 6 & 7: Finalization</h4>
+                    <p class="text-sm text-gray-500">Constructive feedback review, portfolio incorporation, and final interview practice.</p>
+                </li>
+            </ol>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-6">
+        <div class="container mx-auto px-4">
+            <p class="text-sm">&copy; 2024 MyFlix App Case Study. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
