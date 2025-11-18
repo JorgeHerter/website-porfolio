@@ -13,12 +13,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS when the document is ready
         $(document).ready(function () {
             AOS.init({
-                once: true, // Whether animation should happen only once - default true
-                duration: 800, // values from 0 to 3000, with step 50ms
-                easing: 'ease-out-back', // default easing for AOS animations
+                once: true,
+                duration: 800,
+                easing: 'ease-out-back',
             });
         });
     </script>
@@ -43,118 +42,9 @@
     <div class="container mt-5">
         <h1 class="section-heading" data-aos="fade-down">Here are Some Examples of my Work</h1>
         <p class="text-center section-description" data-aos="fade-down" data-aos-delay="100">Click on the project title to view the live demo and the GitHub link to view the code.</p>
-
-        <div class="card mb-4" data-aos="fade-up">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a href="https://jorgeherter.github.io/MyPokedexAPP/" target="_blank">Project 1 –Click Here to View My Pokedex App</a>
-                </h5>
-                <p class="card-text">
-                    Interactive Pokémon app with dynamic modals and API integration.<br>
-                    <a href="docs/pokedex case study.html" target="_blank">Pokedex Case Study</a>
-                </p>
-                <img src="img/pokemon.png" alt="Screenshot of Pokedex App" class="img-fluid mb-3" />
-                <p class="card-text">
-                    <strong>Summary:</strong> A responsive web application that uses HTML, CSS, JavaScript, jQuery, and the Pokémon API to display detailed Pokémon information.
-                </p>
-                <div class="text-center mt-3">
-                    <a href="https://github.com/jorgeherter/MyPokedexAPP" target="_blank" class="social-btn github-btn">
-                        <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
-                        View Repository
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a href="https://movie-api1-fbc239963864.herokuapp.com/" target="_blank">Project 2 – MyFlix API (Backend)</a>
-                </h5>
-                <p class="card-text">
-                    RESTful API for movie data management with secure authentication and MongoDB integration.<br>
-                    <a href="docs/MyFlix Case Study.html" target="_blank">MyFlix Backend Case Study</a>
-                </p>
-                <img src="img/api backend.png" alt="Screenshot of MyFlix API" class="img-fluid mb-3" />
-                <p class="card-text">
-                    <strong>Summary:</strong> REST API built with Node.js, Express, and MongoDB, featuring secure authentication and scalable design.
-                </p>
-                <div class="text-center mt-3">
-                    <a href="https://github.com/JorgeHerter/movie_api3.git" target="_blank" class="social-btn github-btn">
-                        <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
-                        View Repository
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card mb-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a href="https://jorgeflixapp.netlify.app" target="_blank">Project 3 – Click Here to View MyFlix App</a>
-                </h5>
-                <p class="card-text">
-                    A React app that allows users to explore and favorite movies.<br>
-                    <a href="docs/MyFlix-clientside Case Study.html" target="_blank">MyFlix Frontend Case Study</a>
-                </p>
-                <img src="img/myflix-homepage.png" alt="Screenshot of MyFlix App" class="img-fluid mb-3" />
-                <p class="card-text">
-                    <strong>Summary:</strong> Built with React, Node.js, MongoDB, featuring JWT authentication and responsive UI.
-                </p>
-                <div class="text-center mt-3">
-                    <a href="https://github.com/jorgeherter/myflix-client" target="_blank" class="social-btn github-btn">
-                        <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
-                        View Repository
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card mb-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a href="https://meet-app-psi.vercel.app/" target="_blank">Project 4 – Click Here to View my Meet App</a>
-                </h5>
-                <p class="card-text">
-                    A progressive web app to find tech events using Google OAuth and AWS Lambda.<br>
-                    <a href="docs/Meet_App Case Study.html" target="_blank">Meet App Case Study</a>
-                </p>
-                <img src="img/meet app1.png" alt="Screenshot of Meet App" class="img-fluid mb-3" />
-                <p class="card-text">
-                    <strong>Summary:</strong> Built with React and Vite, features offline support, charts, and TDD workflow.
-                </p>
-                <div class="text-center mt-3">
-                    <a href="https://github.com/JorgeHerter/meet_app.git" target="_blank" class="social-btn github-btn">
-                        <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
-                        View Repository
-                    </a>
-                </div>
-            </div>
-        </div>
         
-        <div class="card mb-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a href="https://meet-app-psi.vercel.app/" target="_blank">Project 5 – Click Here to View my Chat App</a>
-                </h5>
-                <p class="card-text">
-                     modern mobile first chat app built with React Native.<br>
-                    <a href="docs/Chat_App Case Study.html" target="_blank">Chat App Case Study</a>
-                </p>
-                <img src="img/Chat_app.png" alt="Screenshot of Chat App" class="img-fluid mb-3" />
-                <p class="card-text">
-                    <strong>Summary:</strong> A modern mobile first chat app built with React Native show casing a Firestore backend.
-                </p>
-                <div class="text-center mt-3">
-                    <a href="https://github.com/JorgeHerter/Chat_App.git" target="_blank" class="social-btn github-btn">
-                        <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
-                        View Repository
-                    </a>
-                </div>
-            </div>      
-
-    </div>
-   <div class="card mb-4" data-aos="fade-up" data-aos-delay="400">
+        <!-- Project 6 - Angular MyFlix -->
+        <div class="card mb-4" data-aos="fade-up">
             <div class="card-body">
                 <h5 class="card-title">
                     <a href="https://jorge-myflix-angular-client.netlify.app" target="_blank">Project 6 – Click Here to View Angular MyFlix</a>
@@ -177,7 +67,134 @@
                 </div>
             </div>
         </div>
-    
+
+        <!-- Project 5 - Chat App -->
+        <div class="card mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="https://meet-app-psi.vercel.app/" target="_blank">Project 5 – Click Here to View my Chat App</a>
+                </h5>
+                <p class="card-text">
+                    A modern mobile first chat app built with React Native.<br>
+                    <a href="docs/Chat_App Case Study.html" target="_blank">Chat App Case Study</a>
+                </p>
+                <div class="text-center">
+                    <img src="img/Chat_app.png" alt="Screenshot of Chat App" class="img-fluid mb-3" />
+                </div>
+                <p class="card-text">
+                    <strong>Summary:</strong> A modern mobile first chat app built with React Native show casing a Firestore backend.
+                </p>
+                <div class="text-center mt-3">
+                    <a href="https://github.com/JorgeHerter/Chat_App.git" target="_blank" class="social-btn github-btn">
+                        <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
+                        View Repository
+                    </a>
+                </div>
+            </div>
+        </div>
+               
+        <!-- Project 4 - Meet App -->
+        <div class="card mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="https://meet-app-psi.vercel.app/" target="_blank">Project 4 – Click Here to View my Meet App</a>
+                </h5>
+                <p class="card-text">
+                    A progressive web app to find tech events using Google OAuth and AWS Lambda.<br>
+                    <a href="docs/Meet_App Case Study.html" target="_blank">Meet App Case Study</a>
+                </p>
+                <div class="text-center">
+                    <img src="img/meet app1.png" alt="Screenshot of Meet App" class="img-fluid mb-3" />
+                </div>
+                <p class="card-text">
+                    <strong>Summary:</strong> Built with React and Vite, features offline support, charts, and TDD workflow.
+                </p>
+                <div class="text-center mt-3">
+                    <a href="https://github.com/JorgeHerter/meet_app.git" target="_blank" class="social-btn github-btn">
+                        <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
+                        View Repository
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 - MyFlix App -->
+        <div class="card mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="https://jorgeflixapp.netlify.app" target="_blank">Project 3 – Click Here to View MyFlix App</a>
+                </h5>
+                <p class="card-text">
+                    A React app that allows users to explore and favorite movies.<br>
+                    <a href="docs/MyFlix-clientside Case Study.html" target="_blank">MyFlix Frontend Case Study</a>
+                </p>
+                <div class="text-center">
+                    <img src="img/myflix-homepage.png" alt="Screenshot of MyFlix App" class="img-fluid mb-3" />
+                </div>
+                <p class="card-text">
+                    <strong>Summary:</strong> Built with React, Node.js, MongoDB, featuring JWT authentication and responsive UI.
+                </p>
+                <div class="text-center mt-3">
+                    <a href="https://github.com/jorgeherter/myflix-client" target="_blank" class="social-btn github-btn">
+                        <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
+                        View Repository
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 - MyFlix API -->
+        <div class="card mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="https://movie-api1-fbc239963864.herokuapp.com/" target="_blank">Project 2 – MyFlix API (Backend)</a>
+                </h5>
+                <p class="card-text">
+                    RESTful API for movie data management with secure authentication and MongoDB integration.<br>
+                    <a href="docs/MyFlix Case Study.html" target="_blank">MyFlix Backend Case Study</a>
+                </p>
+                <div class="text-center">
+                    <img src="img/api backend.png" alt="Screenshot of MyFlix API" class="img-fluid mb-3" />
+                </div>
+                <p class="card-text">
+                    <strong>Summary:</strong> REST API built with Node.js, Express, and MongoDB, featuring secure authentication and scalable design.
+                </p>
+                <div class="text-center mt-3">
+                    <a href="https://github.com/JorgeHerter/movie_api3.git" target="_blank" class="social-btn github-btn">
+                        <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
+                        View Repository
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Project 1 - Pokedex App -->
+        <div class="card mb-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="https://jorgeherter.github.io/MyPokedexAPP/" target="_blank">Project 1 – Click Here to View My Pokedex App</a>
+                </h5>
+                <p class="card-text">
+                    Interactive Pokémon app with dynamic modals and API integration.<br>
+                    <a href="docs/pokedex case study.html" target="_blank">Pokedex Case Study</a>
+                </p>
+                <div class="text-center">
+                    <img src="img/pokemon.png" alt="Screenshot of Pokedex App" class="img-fluid mb-3" />
+                </div>
+                <p class="card-text">
+                    <strong>Summary:</strong> A responsive web application that uses HTML, CSS, JavaScript, jQuery, and the Pokémon API to display detailed Pokémon information.
+                </p>
+                <div class="text-center mt-3">
+                    <a href="https://github.com/jorgeherter/MyPokedexAPP" target="_blank" class="social-btn github-btn">
+                        <img src="img/8666193_github_icon.png" alt="GitHub" class="social-icon" />
+                        View Repository
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+   
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2025 George Herter. All rights reserved.</p>
     </footer>
