@@ -98,7 +98,7 @@
             </ul>
 
             <p class="mt-4"><strong>Bay 10 Ventures (2000–2008)</strong><br>
-            Construction Manager – [City, State, if relevant]</p>
+            Construction Manager – Blufton, SC</p>
             <ul>
               <li>Oversaw daily operations and task tracking for construction projects, **optimizing workflow efficiency**.</li>
               <li>Developed and implemented **process documentation**, improving team adherence and project consistency.</li>
@@ -107,35 +107,83 @@
           </div>
         </div>
 
-        <h4 class="mt-5 text-center">Featured Projects</h4>
-        <p class="text-center text-muted">A glimpse into my hands-on development experience. Click below to see more!</p>
-        <div class="row mt-3 justify-content-center">
-            <div class="col-md-5 mb-4" data-aos="zoom-in">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">ChatApp (React Native)</h5>
-                        <p class="card-text text-muted">A real-time mobile chat application built with React Native and Expo, utilizing Google Firestore Database for messaging and Firebase Cloud Storage for media. Features include image and location sharing, and anonymous user authentication.</p>
-                        <ul class="list-unstyled small text-muted">
-                            <li><span class="font-weight-bold">Tech:</span> React Native, Expo, Firebase (Firestore, Auth, Storage)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5 mb-4" data-aos="zoom-in" data-aos-delay="100">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">MyFlix (MERN Stack)</h5>
-                        <p class="card-text text-muted">A full-stack movie application allowing users to register, browse movies, and create personalized lists. Developed using MongoDB, Express.js, React, and Node.js, focusing on RESTful API design and responsive client-side functionality.</p>
-                        <ul class="list-unstyled small text-muted">
-                            <li><span class="font-weight-bold">Tech:</span> MongoDB, Express.js, React, Node.js, REST APIs</li>
-                        </ul>
-                    </div>
-                </div>
+        <!--
+<h4 class="mt-5 text-center">Featured Projects</h4>
+<p class="text-center text-muted">A glimpse into my hands-on development experience. Click below to see more!</p>
+<div class="row mt-3 justify-content-center">
+    <div class="col-md-5 mb-4" data-aos="zoom-in">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">ChatApp (React Native)</h5>
+                <p class="card-text text-muted">A real-time mobile chat application built with React Native and Expo, utilizing Google Firestore Database for messaging and Firebase Cloud Storage for media. Features include image and location sharing, and anonymous user authentication.</p>
+                <ul class="list-unstyled small text-muted">
+                    <li><span class="font-weight-bold">Tech:</span> React Native, Expo, Firebase (Firestore, Auth, Storage)</li>
+                </ul>
             </div>
         </div>
-        <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="200">
-          <a href="work.html" class="btn btn-info btn-lg">Explore More Work Examples &rarr;</a>
+    </div>
+    <div class="col-md-5 mb-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">MyFlix (MERN Stack)</h5>
+                <p class="card-text text-muted">A full-stack movie application allowing users to register, browse movies, and create personalized lists. Developed using MongoDB, Express.js, React, and Node.js, focusing on RESTful API design and responsive client-side functionality.</p>
+                <ul class="list-unstyled small text-muted">
+                    <li><span class="font-weight-bold">Tech:</span> MongoDB, Express.js, React, Node.js, REST APIs</li>
+                </ul>
+            </div>
         </div>
+    </div>
+</div>
+<div class="text-center mt-4" data-aos="fade-up" data-aos-delay="200">
+  <a href="work.html" class="btn btn-info btn-lg">Explore More Work Examples &rarr;</a>
+</div>
+-->
+<section class="certifications-banner mt-5">
+    <h3 class="text-center mb-4">Certifications</h3>
+
+    <div class="certs-scroll d-flex">
+        <div class="cert-item" onclick="openModal('img/CareerFoundry_Certificate_George Herter (2).png')">
+            <img src="img/CareerFoundry_Certificate_George Herter (2).png" class="cert-thumb">
+            <p class="text-center small mt-2">Intro to Web Development</p>
+        </div>
+
+        <div class="cert-item" onclick="openModal('img/CareerFoundry_Certificate_George Herter (3).png')">
+            <img src="img/CareerFoundry_Certificate_George Herter (3).png" class="cert-thumb">
+            <p class="text-center small mt-2">Full-Stack Immersion</p>
+        </div>
+
+        <div class="cert-item" onclick="openModal('img/CareerFoundry_Certificate_George Herter (4).png')">
+            <img src="img/CareerFoundry_Certificate_George Herter (4).png" class="cert-thumb">
+            <p class="text-center small mt-2">Python for Web Development</p>
+        </div>
+
+        <div class="cert-item" onclick="openModal('img/CareerFoundry_Certificate_George Herter (5).png')">
+            <img src="img/CareerFoundry_Certificate_George Herter (5).png" class="cert-thumb">
+            <p class="text-center small mt-2">Full-Stack Web Development</p>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="certModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+        <img id="modalImg" src="">
+    </div>
+</div>
+
+
+<script>
+function openModal(src) {
+    document.getElementById("modalImg").src = src;
+    document.getElementById("certModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("certModal").style.display = "none";
+}
+</script>
+
 
       </div>
     </div>
