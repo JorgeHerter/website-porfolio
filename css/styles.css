@@ -783,7 +783,8 @@ body.contact::after {
 
 .modal-content img {
     width: 80%;
-    max-width: 900px;
+    max-width: 2000px;
+    height: auto;
     display: block;
     margin: auto;
 }
