@@ -141,49 +141,71 @@
 <section class="certifications-banner mt-5">
     <h3 class="text-center mb-4">Certifications</h3>
 
-    <div class="certs-scroll d-flex">
-        <div class="cert-item" onclick="openModal('img/CareerFoundry_Certificate_George Herter (2).png')">
-            <img src="img/CareerFoundry_Certificate_George Herter (2).png" class="cert-thumb">
+    <div class="certs-scroll">
+        
+        <div class="cert-item">
+            <img src="img/CareerFoundry_Certificate_George Herter (2).png"
+                 class="cert-thumb"
+                 loading="lazy"
+                 onclick="openModalUnder(this, 'img/CareerFoundry_Certificate_George Herter (2).png')">
             <p class="text-center small mt-2">Intro to Web Development</p>
         </div>
 
-        <div class="cert-item" onclick="openModal('img/CareerFoundry_Certificate_George Herter (3).png')">
-            <img src="img/CareerFoundry_Certificate_George Herter (3).png" class="cert-thumb">
+        <div class="cert-item">
+            <img src="img/CareerFoundry_Certificate_George Herter (3).png"
+                 class="cert-thumb"
+                 loading="lazy"
+                 onclick="openModalUnder(this, 'img/CareerFoundry_Certificate_George Herter (3).png')">
             <p class="text-center small mt-2">Full-Stack Immersion</p>
         </div>
 
-        <div class="cert-item" onclick="openModal('img/CareerFoundry_Certificate_George Herter (4).png')">
-            <img src="img/CareerFoundry_Certificate_George Herter (4).png" class="cert-thumb">
+        <div class="cert-item">
+            <img src="img/CareerFoundry_Certificate_George Herter (4).png"
+                 class="cert-thumb"
+                 loading="lazy"
+                 onclick="openModalUnder(this, 'img/CareerFoundry_Certificate_George Herter (4).png')">
             <p class="text-center small mt-2">Python for Web Development</p>
         </div>
 
-        <div class="cert-item" onclick="openModal('img/CareerFoundry_Certificate_George Herter (5).png')">
-            <img src="img/CareerFoundry_Certificate_George Herter (5).png" class="cert-thumb">
+        <div class="cert-item">
+            <img src="img/CareerFoundry_Certificate_George Herter (5).png"
+                 class="cert-thumb"
+                 loading="lazy"
+                 onclick="openModalUnder(this, 'img/CareerFoundry_Certificate_George Herter (5).png')">
             <p class="text-center small mt-2">Full-Stack Web Development</p>
         </div>
+
     </div>
 </section>
 
-<!-- Modal -->
-<div id="certModal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
-    <div class="modal-content">
-        <img id="modalImg" src="">
-    </div>
+<!-- Modal that appears AFTER the thumbnail -->
+<div id="certModal" class="below-modal">
+    <img id="modalImg">
 </div>
 
 
-<script>
-function openModal(src) {
-    document.getElementById("modalImg").src = src;
-    document.getElementById("certModal").style.display = "block";
-}
 
-function closeModal() {
-    document.getElementById("certModal").style.display = "none";
+<script>
+function openModalUnder(clickedThumb, src) {
+    const modal = document.getElementById("certModal");
+    const modalImg = document.getElementById("modalImg");
+
+    // Set image source
+    modalImg.src = src;
+
+    // Insert modal right after the certification clicked
+    clickedThumb.parentElement.insertAdjacentElement("afterend", modal);
+
+    // Show modal
+    modal.style.display = "block";
+
+    // Smooth scroll to bring modal into view
+    modal.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // Close modal when clicked
+    modal.onclick = () => modal.style.display = "none";
 }
 </script>
-
 
       </div>
     </div>

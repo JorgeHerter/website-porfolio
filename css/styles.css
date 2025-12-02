@@ -728,48 +728,57 @@ body.contact::after {
     }
 }
 
-/* Certifications horizontal scroll */
+/* ============================================================
+   CERTIFICATIONS — HORIZONTAL SCROLL LIST
+   ============================================================ */
 .certs-scroll {
     display: flex;
-    justify-content: center;   /* Centers all items */
+    justify-content: center;      /* Centers cert icons */
     gap: 25px;
     padding: 10px 0;
-
     overflow-x: auto;
     scroll-snap-type: x mandatory;
 }
 
 .cert-item {
-    flex: 0 0 auto;            /* Ensures items stay their size */
-    scroll-snap-align: center; 
+    flex: 0 0 auto;               /* Keep fixed width */
+    scroll-snap-align: center;
     text-align: center;
     cursor: pointer;
 }
 
 .cert-thumb {
-    width: 130px; 
+    width: 130px;
     height: auto;
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    transition: transform 0.2s;
+    transition: transform 0.2s ease;
 }
 
 .cert-thumb:hover {
     transform: scale(1.05);
 }
 
-/* Modal styling */
+
+/* ============================================================
+   MODAL — SHOW FULL CERTIFICATION
+   ============================================================ */
 .modal {
-    display: none;
+    display: none;                /* Hidden until opened */
     position: fixed;
+    inset: 0;                     /* Same as top/right/bottom/left: 0 */
     z-index: 9999;
-    padding-top: 80px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background: rgba(0,0,0,0.8);
+
+    /* Soft overlay */
+    background: rgba(0,0,0,0.1);  
+    backdrop-filter: blur(2px);
+
+    /* Align modal content to bottom of viewport */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    padding: 20px;
 }
 
 .modal-content img {
@@ -779,21 +788,22 @@ body.contact::after {
     margin: auto;
 }
 
+/* Close button */
 .close {
     position: absolute;
     top: 20px;
     right: 35px;
     font-size: 40px;
-    color: white;
+    color: black;
     cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .close:hover,
 .close:focus {
     color: #999;
-    text-decoration: none;
-    cursor: pointer;
 }
+
 
 /* ========== Footer Styles ========== */
 footer {
